@@ -308,10 +308,75 @@ if (logoWrapper && homeLogo && glowCircle && glowGradient) {
     });
     
     logoWrapper.addEventListener('mouseleave', () => {
-        glowCircle.setAttribute('opacity', '0');
+        glowCircle.setAttribute('opacity', '0.5');
         // Reset to orange when mouse leaves
         targetColorMix = 0;
         startColorAnimation();
     });
+}
+
+// Path SVG - Load SVG inline
+async function initPathSvg() {
+    const container = document.getElementById('pathSvgContainer');
+    if (!container) return;
+    
+    try {
+        const response = await fetch('images/path.svg');
+        const svgText = await response.text();
+        
+        // Create a temporary div to parse the SVG
+        const tempDiv = document.createElement('div');
+        tempDiv.innerHTML = svgText;
+        const svgElement = tempDiv.querySelector('svg');
+        
+        if (svgElement) {
+            // Set SVG attributes for proper display
+            svgElement.setAttribute('class', 'path-svg');
+            svgElement.setAttribute('preserveAspectRatio', 'xMidYMid meet');
+            
+            container.appendChild(svgElement);
+        }
+    } catch (error) {
+        console.error('Error loading SVG:', error);
+    }
+}
+
+// Initialize path SVG when DOM is ready
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initPathSvg);
+} else {
+    initPathSvg();
+}
+
+// Ontwikkelplan Accordion functionality
+function initOntwikkelplanAccordion() {
+    const accordionItems = document.querySelectorAll('.accordion-item');
+    
+    accordionItems.forEach(item => {
+        const header = item.querySelector('.accordion-header');
+        
+        if (header) {
+            header.addEventListener('click', () => {
+                const isActive = item.classList.contains('active');
+                
+                // Close all items
+                accordionItems.forEach(otherItem => {
+                    otherItem.classList.remove('active');
+                });
+                
+                // Open clicked item if it wasn't active
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        }
+    });
+}
+
+// Initialize accordion when DOM is ready
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initOntwikkelplanAccordion);
+} else {
+    initOntwikkelplanAccordion();
 }
 

@@ -27,6 +27,16 @@ body {
     position: relative;
 }
 
+/* All headings use Montez font */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montez', cursive;
+}
+
+/* All paragraphs use Jacques Francois font */
+p {
+    font-family: 'Jacques Francois', serif;
+}
+
 /* All anchor tags use Montez font */
 a {
     font-family: 'Montez', cursive;
@@ -155,7 +165,8 @@ a {
 }
 
 .menu-item:hover {
-    opacity: 0.8;
+    color: var(--orange);
+    filter: brightness(1.3);
 }
 
 .menu-item.active {
@@ -181,7 +192,7 @@ a {
 .submenu {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.3s ease;
+    transition: max-height 1s ease;
     width: 100%;
     padding: 0;
     display: flex;
@@ -211,7 +222,8 @@ a {
 }
 
 .submenu-item:hover {
-    opacity: 0.8;
+    color: var(--orange);
+    filter: brightness(1.3);
 }
 
 .submenu-item.active {
@@ -222,7 +234,7 @@ a {
 .page {
     display: none;
     min-height: 100vh;
-    padding: 40px;
+    padding: 40px 0;
     animation: fadeIn 0.5s ease;
 }
 
@@ -297,7 +309,7 @@ a {
 
 /* Section Titles */
 .section-title {
-    font-family: 'Dancing Script', cursive;
+    font-family: 'Montez', cursive;
     font-size: 72px;
     font-weight: 700;
     color: var(--orange);
@@ -329,7 +341,7 @@ a {
 
 /* Inhoudsopgave Page */
 #inhoudsopgave {
-    padding: 100px 40px;
+    padding: 100px 0;
     display: flex;
     align-items: flex-start;
     justify-content: center;
@@ -337,7 +349,6 @@ a {
 
 .inhoudsopgave-content {
     width: 100%;
-    max-width: 1400px;
     position: relative;
 }
 
@@ -461,7 +472,7 @@ a {
     display: flex;
     gap: 60px;
     align-items: flex-start;
-    padding: 0 40px;
+    padding: 0;
     position: relative;
     z-index: 2;
 }
@@ -574,7 +585,7 @@ a {
 }
 
 .competentie-number {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Jacques Francois', serif;
     font-size: 24px;
     font-weight: 600;
     color: var(--orange);
@@ -710,9 +721,19 @@ a {
 
 /* Placeholder Pages */
 .page-content {
-    max-width: 1200px;
+    width: 100%;
     margin: 0 auto;
-    padding: 100px 40px;
+    padding: 100px 0;
+}
+
+.page-content .section-title {
+    font-family: 'Montez', cursive;
+    font-size: 48px;
+    font-weight: 400;
+    margin-bottom: 0;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 .page-content .over-mij-title-image {
@@ -727,6 +748,34 @@ a {
     border: 2px dashed rgba(255, 107, 53, 0.3);
     border-radius: 8px;
     margin-top: 40px;
+}
+
+/* Path SVG Container */
+.path-container {
+    width: 100%;
+    position: relative;
+    margin-top: 40px;
+    overflow: hidden;
+}
+
+.path-container {
+    position: relative;
+    width: 100%;
+    margin: 40px 0;
+}
+
+.path-svg-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.path-svg {
+    width: 100%;
+    max-width: 1280px;
+    height: auto;
+    display: block;
 }
 
 /* Responsive Design */
@@ -947,5 +996,93 @@ a {
     100% {
         transform: translateX(-100%);
     }
+}
+
+/* Ontwikkelplan Accordion */
+.ontwikkelplan-accordion {
+    margin-top: 40px;
+}
+
+.accordion-item {
+    border-bottom: 1px solid rgba(253, 94, 1, 0.2);
+    margin-bottom: 20px;
+}
+
+.accordion-header {
+    display: flex;
+    align-items: center;
+    padding: 20px 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    gap: 15px;
+}
+
+.accordion-header:hover {
+    padding-left: 10px;
+}
+
+.accordion-number {
+    font-family: 'Jacques Francois', serif;
+    font-size: 20px;
+    color: var(--orange);
+    font-weight: 400;
+    min-width: 30px;
+}
+
+.accordion-title {
+    font-family: 'Jacques Francois', serif;
+    font-size: 24px;
+    color: var(--text-light);
+    flex: 1;
+}
+
+.accordion-arrow {
+    font-family: 'Jacques Francois', serif;
+    font-size: 32px;
+    color: var(--orange);
+    transition: transform 0.3s ease;
+    line-height: 1;
+    min-width: 30px;
+    text-align: right;
+}
+
+.accordion-item.active .accordion-arrow {
+    transform: rotate(90deg);
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+    padding: 0 0 0 45px;
+}
+
+.accordion-item.active .accordion-content {
+    max-height: 2000px;
+    padding: 20px 0 20px 45px;
+}
+
+.accordion-section {
+    margin-bottom: 25px;
+}
+
+.accordion-section:last-child {
+    margin-bottom: 0;
+}
+
+.accordion-subtitle {
+    font-family: 'Jacques Francois', serif;
+    font-size: 20px;
+    color: var(--orange);
+    margin-bottom: 10px;
+    font-weight: 400;
+}
+
+.accordion-content p {
+    font-family: 'Jacques Francois', serif;
+    font-size: 16px;
+    color: var(--text-light);
+    line-height: 1.6;
+    margin: 0;
 }
 
