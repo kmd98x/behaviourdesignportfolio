@@ -10,12 +10,35 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500&family=Dancing+Script:wght@400;700&family=Playfair+Display+SC:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Global Navigation Bar -->
-    <nav class="top-nav">
-        <a href="index.html" class="top-nav-link">Home</a>
-        <a href="over-mij.html" class="top-nav-link active">Over mij</a>
-        <a href="Inhoudsopgave.html" class="top-nav-link">Inhoudsopgave</a>
-    </nav>
+    <!-- Hamburger Menu -->
+    <div class="hamburger-menu" id="hamburgerMenu">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+    </div>
+
+    <!-- Menu Overlay -->
+    <div class="menu-overlay" id="menuOverlay">
+        <div class="menu-content">
+            <a href="index.html" class="menu-item">Home</a>
+            <a href="over-mij.html" class="menu-item active">Over mij</a>
+            <div class="menu-item-wrapper">
+                <a href="Inhoudsopgave.html" class="menu-item has-submenu" id="inhoudsopgaveMenu">
+                    Inhoudsopgave
+                    <span class="submenu-toggle">›</span>
+                </a>
+                <div class="submenu" id="inhoudsopgaveSubmenu">
+                    <a href="0-meting.html" class="submenu-item">0- Meting</a>
+                    <a href="ontwikkelplan.html" class="submenu-item">Ontwikkelplan</a>
+                    <a href="carddeck.html" class="submenu-item">Carddeck</a>
+                    <a href="bootcamp.html" class="submenu-item">Bootcamp</a>
+                    <a href="gewoonte.html" class="submenu-item">Gewoonte</a>
+                    <a href="workshop.html" class="submenu-item">Workshop</a>
+                    <a href="omnient.html" class="submenu-item">Omnient</a>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Over Mij Page -->
     <div class="page active over-mij-page" style="display: block;">

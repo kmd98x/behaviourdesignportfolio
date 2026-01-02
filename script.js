@@ -1,25 +1,146 @@
-// Navigation functionality
-const topNavLinks = document.querySelectorAll('.top-nav-link');
-const pages = document.querySelectorAll('.page');
+// Hamburger Menu functionality - Initialize when DOM is ready
+function initHamburgerMenu() {
+    const hamburgerMenu = document.getElementById('hamburgerMenu');
+    const menuOverlay = document.getElementById('menuOverlay');
+    const menuItems = document.querySelectorAll('.menu-item');
+    const submenuToggle = document.getElementById('inhoudsopgaveMenu');
+    const submenu = document.getElementById('inhoudsopgaveSubmenu');
 
-// Top navigation links
-topNavLinks.forEach(link => {
-    link.addEventListener('click', (e) => {
-        // Only prevent default for internal page navigation (data-page links)
-        const targetPage = link.getAttribute('data-page');
-        if (targetPage) {
+    // Toggle hamburger menu
+    if (hamburgerMenu && menuOverlay) {
+        hamburgerMenu.addEventListener('click', () => {
+            const isOpening = !menuOverlay.classList.contains('active');
+            hamburgerMenu.classList.toggle('active');
+            menuOverlay.classList.toggle('active');
+            
+            // Set animation delays for menu items when opening
+            if (isOpening) {
+                menuItems.forEach((item, index) => {
+                    item.style.setProperty('--item-index', index);
+                });
+            }
+        });
+
+        // Close menu when clicking outside
+        menuOverlay.addEventListener('click', (e) => {
+            if (e.target === menuOverlay) {
+                hamburgerMenu.classList.remove('active');
+                menuOverlay.classList.remove('active');
+            }
+        });
+    }
+
+    // Toggle submenu
+    if (submenuToggle && submenu) {
+        const arrow = submenuToggle.querySelector('.submenu-toggle');
+        const submenuItems = submenu.querySelectorAll('.submenu-item');
+        
+        // Handle click on the arrow - toggle submenu
+        if (arrow) {
+            arrow.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                const isOpening = !submenu.classList.contains('active');
+                submenuToggle.classList.toggle('active');
+                submenu.classList.toggle('active');
+                
+                // Set animation delays for submenu items when opening
+                if (isOpening) {
+                    submenuItems.forEach((item, index) => {
+                        item.style.setProperty('--submenu-item-index', index);
+                    });
+                }
+            });
+        }
+        
+        // Handle click on the menu item itself
+        submenuToggle.addEventListener('click', (e) => {
+            // If clicking on the arrow, prevent default and toggle submenu
+            if (arrow && (e.target === arrow || arrow.contains(e.target))) {
+                e.preventDefault();
+                e.stopPropagation();
+                const isOpening = !submenu.classList.contains('active');
+                submenuToggle.classList.toggle('active');
+                submenu.classList.toggle('active');
+                
+                // Set animation delays for submenu items when opening
+                if (isOpening) {
+                    submenuItems.forEach((item, index) => {
+                        item.style.setProperty('--submenu-item-index', index);
+                    });
+                }
+            }
+            // If clicking on the text (not the arrow), let the link work normally
+            // The link will navigate to Inhoudsopgave.html
+        });
+    }
+
+    // Close menu when clicking on menu items (except submenu toggle)
+    menuItems.forEach(item => {
+        if (!item.classList.contains('has-submenu')) {
+            item.addEventListener('click', () => {
+                if (hamburgerMenu && menuOverlay) {
+                    hamburgerMenu.classList.remove('active');
+                    menuOverlay.classList.remove('active');
+                }
+            });
+        }
+    });
+
+    // Close menu when clicking on submenu items
+    const submenuItems = document.querySelectorAll('.submenu-item');
+    submenuItems.forEach(item => {
+        item.addEventListener('click', () => {
+            if (hamburgerMenu && menuOverlay) {
+                hamburgerMenu.classList.remove('active');
+                menuOverlay.classList.remove('active');
+            }
+        });
+    });
+}
+
+// Initialize hamburger menu when DOM is ready
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initHamburgerMenu);
+} else {
+    // DOM is already loaded
+    initHamburgerMenu();
+}
+
+// Competentie navigatie functionality
+function initCompetentieNav() {
+    const navLinks = document.querySelectorAll('.competentie-nav-link');
+    const contentSections = document.querySelectorAll('.competentie-content');
+    
+    navLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
             e.preventDefault();
             
+            const targetId = link.getAttribute('data-sectie');
+            
             // Update active nav link
-            topNavLinks.forEach(l => l.classList.remove('active'));
+            navLinks.forEach(l => l.classList.remove('active'));
             link.classList.add('active');
             
-            // Show target page
-            showPage(targetPage);
-        }
-        // If no data-page, let the link work normally (external page links)
+            // Show corresponding content
+            contentSections.forEach(section => {
+                section.classList.remove('active');
+                if (section.id === targetId) {
+                    section.classList.add('active');
+                }
+            });
+        });
     });
-});
+}
+
+// Initialize competentie nav when DOM is ready
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initCompetentieNav);
+} else {
+    initCompetentieNav();
+}
+
+const pages = document.querySelectorAll('.page');
 
 // Show specific page
 function showPage(pageId) {
