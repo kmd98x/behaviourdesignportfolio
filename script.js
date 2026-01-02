@@ -2,9 +2,18 @@
 function initHamburgerMenu() {
     const hamburgerMenu = document.getElementById('hamburgerMenu');
     const menuOverlay = document.getElementById('menuOverlay');
+    const menuClose = document.getElementById('menuClose');
     const menuItems = document.querySelectorAll('.menu-item');
     const submenuToggle = document.getElementById('inhoudsopgaveMenu');
     const submenu = document.getElementById('inhoudsopgaveSubmenu');
+
+    // Function to close menu
+    function closeMenu() {
+        if (hamburgerMenu && menuOverlay) {
+            hamburgerMenu.classList.remove('active');
+            menuOverlay.classList.remove('active');
+        }
+    }
 
     // Toggle hamburger menu
     if (hamburgerMenu && menuOverlay) {
@@ -21,28 +30,34 @@ function initHamburgerMenu() {
             }
         });
 
+        // Close menu with close button
+        if (menuClose) {
+            menuClose.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                closeMenu();
+            });
+        }
+
         // Close menu when clicking outside
         menuOverlay.addEventListener('click', (e) => {
             if (e.target === menuOverlay) {
-                hamburgerMenu.classList.remove('active');
-                menuOverlay.classList.remove('active');
+                closeMenu();
             }
         });
     }
 
-    // Toggle submenu
+    // Toggle submenu on hover
     if (submenuToggle && submenu) {
-        const arrow = submenuToggle.querySelector('.submenu-toggle');
         const submenuItems = submenu.querySelectorAll('.submenu-item');
+        const menuItemWrapper = submenuToggle.closest('.menu-item-wrapper');
         
-        // Handle click on the arrow - toggle submenu
-        if (arrow) {
-            arrow.addEventListener('click', (e) => {
-                e.preventDefault();
-                e.stopPropagation();
+        // Show submenu on hover
+        if (menuItemWrapper) {
+            menuItemWrapper.addEventListener('mouseenter', () => {
                 const isOpening = !submenu.classList.contains('active');
-                submenuToggle.classList.toggle('active');
-                submenu.classList.toggle('active');
+                submenuToggle.classList.add('active');
+                submenu.classList.add('active');
                 
                 // Set animation delays for submenu items when opening
                 if (isOpening) {
@@ -51,28 +66,13 @@ function initHamburgerMenu() {
                     });
                 }
             });
+            
+            // Hide submenu when mouse leaves
+            menuItemWrapper.addEventListener('mouseleave', () => {
+                submenuToggle.classList.remove('active');
+                submenu.classList.remove('active');
+            });
         }
-        
-        // Handle click on the menu item itself
-        submenuToggle.addEventListener('click', (e) => {
-            // If clicking on the arrow, prevent default and toggle submenu
-            if (arrow && (e.target === arrow || arrow.contains(e.target))) {
-                e.preventDefault();
-                e.stopPropagation();
-                const isOpening = !submenu.classList.contains('active');
-                submenuToggle.classList.toggle('active');
-                submenu.classList.toggle('active');
-                
-                // Set animation delays for submenu items when opening
-                if (isOpening) {
-                    submenuItems.forEach((item, index) => {
-                        item.style.setProperty('--submenu-item-index', index);
-                    });
-                }
-            }
-            // If clicking on the text (not the arrow), let the link work normally
-            // The link will navigate to Inhoudsopgave.html
-        });
     }
 
     // Close menu when clicking on menu items (except submenu toggle)
