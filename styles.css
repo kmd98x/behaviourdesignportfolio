@@ -748,6 +748,54 @@ a {
     border: 2px dashed rgba(255, 107, 53, 0.3);
     border-radius: 8px;
     margin-top: 40px;
+    position: relative;
+}
+
+.overlay-link {
+    position: absolute;
+    width: 120px;
+    height: 71px;
+    z-index: 10;
+}
+
+.overlay-link--meting {
+    left: 10%;
+    top: 42%;
+}
+
+.overlay-link--ontwikkelplan {
+    left: 27.6%;
+    top: 64%;
+}
+
+.overlay-link--carddeck {
+    left: 30%;
+    top: 21%;
+}
+
+.overlay-link--bootcamp {
+    left: 40%;
+    top: 40%;
+}
+
+.overlay-link--gewoonte {
+    left: 54%;
+    top: 57%;
+}
+
+.overlay-link--workshop {
+    left: 70%;
+    top: 40%;
+}
+
+.overlay-link--omnient {
+    left: 82%;
+    top: 61%;
+}
+
+.overlay-link--overmij {
+    left: 6%;
+    top: 11%;
 }
 
 /* Path SVG Container */
