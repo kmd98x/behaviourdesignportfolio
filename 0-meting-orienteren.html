@@ -8,6 +8,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500&family=Dancing+Script:wght@400;700&family=Playfair+Display+SC:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 </head>
 <body>
     <!-- Hamburger Menu -->
@@ -61,7 +63,15 @@
                 </div>
                 <div class="competentie-content-wrapper">
                     <div class="competentie-content active" id="waar-ik-nu-sta">
-                        <p>Ik heb basiservaring met verschillende vormen van onderzoek, zoals literatuuronderzoek, deskresearch en het afnemen van interviews. In eerdere projecten heb ik vaak de eerste stappen gezet om de gebruiker, de context en het probleem beter te begrijpen. Ik vind het interessant om informatie te verzamelen en verbanden te zoeken tussen wat mensen zeggen en wat ze doen. Toch merk ik dat mijn onderzoek soms nog te oppervlakkig blijft. Ik stel vaak wel vragen, maar niet altijd de juiste of diepgaande vragen die echt nieuwe inzichten opleveren. Ook vind ik het soms lastig om van een breed onderwerp naar een duidelijke en afgebakende onderzoeksvraag te komen. Daardoor kan het gebeuren dat mijn onderzoek niet altijd helemaal gericht of relevant genoeg is.</p>
+                        <div class="waar-ik-nu-sta-wrapper">
+                            <p>Ik heb basiservaring met verschillende vormen van onderzoek, zoals literatuuronderzoek, deskresearch en het afnemen van interviews. In eerdere projecten heb ik vaak de eerste stappen gezet om de gebruiker, de context en het probleem beter te begrijpen. Ik vind het interessant om informatie te verzamelen en verbanden te zoeken tussen wat mensen zeggen en wat ze doen. Toch merk ik dat mijn onderzoek soms nog te oppervlakkig blijft. Ik stel vaak wel vragen, maar niet altijd de juiste of diepgaande vragen die echt nieuwe inzichten opleveren. Ook vind ik het soms lastig om van een breed onderwerp naar een duidelijke en afgebakende onderzoeksvraag te komen. Daardoor kan het gebeuren dat mijn onderzoek niet altijd helemaal gericht of relevant genoeg is.</p>
+                            <div class="progress-bar-container">
+                                <div class="progress-bar">
+                                    <div class="progress-bar-fill"></div>
+                                    <span class="progress-bar-text">65%</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="competentie-content" id="ontwikkeling">
                         <p>In de afgelopen semesters heb ik verschillende onderzoeksmethodes geleerd en gebruikt, zoals het maken van persona's, het in kaart brengen van de gebruikerscontext en het observeren van gedrag. Daardoor heb ik beter geleerd om vanuit de gebruiker te denken in plaats van alleen vanuit mijn eigen ideeën. Mijn sterke punt is het verzamelen van informatie. Ik ben nieuwsgierig, kan goed luisteren en vind het interessant om verbanden te zien in wat mensen zeggen of doen. Wat ik nog wil verbeteren, is het analyseren van die informatie en het samenvatten tot duidelijke conclusies. Ik wil leren hoe ik data beter kan ordenen, vergelijken en vertalen naar inzichten die helpen bij het ontwerpen.</p>
@@ -81,14 +91,60 @@
                         </ul>
                     </div>
                     <div class="competentie-content" id="voorbeelden">
-                        <p>Hier komen voorbeelden...</p>
+                        <div class="swiper example-swiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <img src="images/0-meting/orienteren-en-begrijpen/oeb-test-plan.png" alt="OEB Test Plan">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="images/0-meting/orienteren-en-begrijpen/intro-over-mezelf.png" alt="Intro over mezelf">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="images/0-meting/orienteren-en-begrijpen/formulier-per-tester.png" alt="Formulier per tester">
+                                </div>
+                            </div>
+                            <!-- Navigation buttons -->
+                            <div class="swiper-button-next"></div>
+                            <div class="swiper-button-prev"></div>
+                            <!-- Pagination -->
+                            <div class="swiper-pagination"></div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="script.js"></script>
+    <script>
+        // Initialize Swiper for examples section
+        document.addEventListener('DOMContentLoaded', function() {
+            const exampleSwiper = new Swiper('.example-swiper', {
+                effect: 'coverflow',
+                grabCursor: true,
+                centeredSlides: true,
+                slidesPerView: 'auto',
+                loop: true,
+                coverflowEffect: {
+                    rotate: 50,
+                    stretch: 0,
+                    depth: 100,
+                    modifier: 1,
+                    slideShadows: true,
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+            });
+        });
+    </script>
 </body>
 </html>
 

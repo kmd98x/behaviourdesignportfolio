@@ -380,3 +380,45 @@ if (document.readyState === 'loading') {
     initOntwikkelplanAccordion();
 }
 
+// Progress bar percentage counter animation
+function initProgressBarCounter() {
+    const progressBarText = document.querySelector('.progress-bar-text');
+    if (!progressBarText) return;
+    
+    const targetPercentage = 65;
+    const duration = 3000; // 3 seconds (matches CSS animation)
+    const startTime = Date.now();
+    
+    function updateCounter() {
+        const elapsed = Date.now() - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        const currentPercentage = Math.floor(progress * targetPercentage);
+        
+        progressBarText.textContent = currentPercentage + '%';
+        
+        if (progress < 1) {
+            requestAnimationFrame(updateCounter);
+        } else {
+            progressBarText.textContent = targetPercentage + '%';
+        }
+    }
+    
+    // Start animation when element is visible
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                updateCounter();
+                observer.disconnect();
+            }
+        });
+    }, { threshold: 0.1 });
+    
+    observer.observe(progressBarText);
+}
+
+// Initialize progress bar counter when DOM is ready
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initProgressBarCounter);
+} else {
+    initProgressBarCounter();
+}
