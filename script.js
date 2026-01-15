@@ -382,38 +382,48 @@ if (document.readyState === 'loading') {
 
 // Progress bar percentage counter animation
 function initProgressBarCounter() {
-    const progressBarText = document.querySelector('.progress-bar-text');
-    if (!progressBarText) return;
+    const progressBarTexts = document.querySelectorAll('.progress-bar-text');
+    if (progressBarTexts.length === 0) return;
     
-    const targetPercentage = 65;
-    const duration = 3000; // 3 seconds (matches CSS animation)
-    const startTime = Date.now();
-    
-    function updateCounter() {
-        const elapsed = Date.now() - startTime;
-        const progress = Math.min(elapsed / duration, 1);
-        const currentPercentage = Math.floor(progress * targetPercentage);
+    progressBarTexts.forEach(progressBarText => {
+        // Get target percentage from the text content (e.g., "65%")
+        const targetPercentage = parseInt(progressBarText.textContent) || 65;
         
-        progressBarText.textContent = currentPercentage + '%';
-        
-        if (progress < 1) {
-            requestAnimationFrame(updateCounter);
-        } else {
-            progressBarText.textContent = targetPercentage + '%';
+        // Set CSS custom property for animation width
+        const progressBarFill = progressBarText.closest('.progress-bar')?.querySelector('.progress-bar-fill');
+        if (progressBarFill) {
+            progressBarFill.style.setProperty('--progress-width', targetPercentage + '%');
         }
-    }
-    
-    // Start animation when element is visible
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                updateCounter();
-                observer.disconnect();
+        
+        const duration = 3000; // 3 seconds (matches CSS animation)
+        const startTime = Date.now();
+        
+        function updateCounter() {
+            const elapsed = Date.now() - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            const currentPercentage = Math.floor(progress * targetPercentage);
+            
+            progressBarText.textContent = currentPercentage + '%';
+            
+            if (progress < 1) {
+                requestAnimationFrame(updateCounter);
+            } else {
+                progressBarText.textContent = targetPercentage + '%';
             }
-        });
-    }, { threshold: 0.1 });
-    
-    observer.observe(progressBarText);
+        }
+        
+        // Start animation when element is visible
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    updateCounter();
+                    observer.disconnect();
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        observer.observe(progressBarText);
+    });
 }
 
 // Initialize progress bar counter when DOM is ready
@@ -422,3 +432,110 @@ if (document.readyState === 'loading') {
 } else {
     initProgressBarCounter();
 }
+
+// Carddeck Navigation functionality
+function initCarddeckNav() {
+    const navLinks = document.querySelectorAll('.carddeck-nav-link');
+    const contentSections = document.querySelectorAll('.carddeck-content-section');
+    
+    navLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            
+            const targetId = link.getAttribute('data-sectie');
+            
+            // Update active nav link
+            navLinks.forEach(l => l.classList.remove('active'));
+            link.classList.add('active');
+            
+            // Show corresponding content
+            contentSections.forEach(section => {
+                section.classList.remove('active');
+                if (section.id === targetId) {
+                    section.classList.add('active');
+                    // Initialize accordion when competenties section becomes active
+                    if (targetId === 'competenties') {
+                        // Small delay to ensure DOM is updated
+                        setTimeout(() => {
+                            initCarddeckAccordion();
+                        }, 10);
+                    }
+                }
+            });
+        });
+    });
+}
+
+// Carddeck Accordion functionality (same as ontwikkelplan)
+function initCarddeckAccordion() {
+    const accordionContainer = document.querySelector('.carddeck-accordion');
+    if (!accordionContainer) {
+        console.log('Accordion container not found');
+        return;
+    }
+    
+    // Remove initialization flag to allow re-initialization
+    accordionContainer.removeAttribute('data-initialized');
+    
+    // Remove all existing event listeners by cloning
+    const accordionItems = accordionContainer.querySelectorAll('.accordion-item');
+    
+    accordionItems.forEach(item => {
+        const header = item.querySelector('.accordion-header');
+        if (header) {
+            // Clone to remove old listeners
+            const newHeader = header.cloneNode(true);
+            header.parentNode.replaceChild(newHeader, header);
+        }
+    });
+    
+    // Re-query after cloning
+    const freshItems = accordionContainer.querySelectorAll('.accordion-item');
+    
+    freshItems.forEach(item => {
+        const header = item.querySelector('.accordion-header');
+        
+        if (header) {
+            header.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                
+                const isActive = item.classList.contains('active');
+                
+                // Close all items
+                freshItems.forEach(otherItem => {
+                    otherItem.classList.remove('active');
+                });
+                
+                // Toggle: open if closed, close if open
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        }
+    });
+    
+    accordionContainer.setAttribute('data-initialized', 'true');
+}
+
+// Initialize carddeck nav when DOM is ready
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => {
+        initCarddeckNav();
+        // Check if competenties section is already active
+        const competentiesSection = document.getElementById('competenties');
+        if (competentiesSection && competentiesSection.classList.contains('active')) {
+            initCarddeckAccordion();
+        }
+    });
+} else {
+    initCarddeckNav();
+    // Check if competenties section is already active
+    const competentiesSection = document.getElementById('competenties');
+    if (competentiesSection && competentiesSection.classList.contains('active')) {
+        initCarddeckAccordion();
+    }
+}
+
+// Initialize accordion when competenties section becomes active
+// This is handled in initCarddeckNav when the tab is clicked

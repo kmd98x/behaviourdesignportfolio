@@ -8,6 +8,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500&family=Dancing+Script:wght@400;700&family=Playfair+Display+SC:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 </head>
 <body>
     <!-- Hamburger Menu -->
@@ -61,7 +63,15 @@
                 </div>
                 <div class="competentie-content-wrapper">
                     <div class="competentie-content active" id="waar-ik-nu-sta">
-                        <p>Op dit moment plan ik regelmatig feedbackrondes in, bijvoorbeeld met medestudenten, docenten of gebruikers. Dat helpt mij om inzicht te krijgen in wat goed werkt in mijn ontwerp en wat nog beter kan. Toch merk ik dat ik mijn evaluaties nog niet altijd gestructureerd aanpak. Vaak beoordeel ik mijn werk vooral op basis van meningen of persoonlijke indrukken, in plaats van via duidelijke methodes. Daardoor is mijn evaluatie soms wat oppervlakkig en weet ik niet altijd waarom iets goed of minder goed is. Ik wil leren om evaluaties meer op feiten en data te baseren, zodat ik sterker kan onderbouwen waarom bepaalde ontwerpkeuzes effectief zijn.</p>
+                        <div class="waar-ik-nu-sta-wrapper">
+                            <p>Op dit moment plan ik regelmatig feedbackrondes in, bijvoorbeeld met medestudenten, docenten of gebruikers. Dat helpt mij om inzicht te krijgen in wat goed werkt in mijn ontwerp en wat nog beter kan. Toch merk ik dat ik mijn evaluaties nog niet altijd gestructureerd aanpak. Vaak beoordeel ik mijn werk vooral op basis van meningen of persoonlijke indrukken, in plaats van via duidelijke methodes. Daardoor is mijn evaluatie soms wat oppervlakkig en weet ik niet altijd waarom iets goed of minder goed is. Ik wil leren om evaluaties meer op feiten en data te baseren, zodat ik sterker kan onderbouwen waarom bepaalde ontwerpkeuzes effectief zijn.</p>
+                            <div class="progress-bar-container">
+                                <div class="progress-bar">
+                                    <div class="progress-bar-fill"></div>
+                                    <span class="progress-bar-text">70%</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="competentie-content" id="ontwikkeling">
                         <p>In de afgelopen periode heb ik veel ervaring opgedaan (tijdens korte stage) met het verzamelen en verwerken van feedback. Tijdens groepsprojecten heb ik bijvoorbeeld gebruikerstesten uitgevoerd en feedbackmomenten georganiseerd met verschillende doelgroepen. Ook heb ik samengewerkt met teamleden om A/B-testen op te zetten(korte stage) en resultaten te bespreken. Door dit te doen, heb ik geleerd dat evalueren niet alleen gaat om het horen van meningen, maar ook om het vertalen van die feedback naar concrete verbeteringen. Ik begin steeds beter te begrijpen hoe belangrijk het is om gebruikers echt te betrekken bij het ontwerpproces, omdat hun ervaring vaak andere inzichten oplevert dan die van ontwerpers of docenten.</p>
@@ -80,14 +90,31 @@
                         </ul>
                     </div>
                     <div class="competentie-content" id="voorbeelden">
-                        <p>Hier komen voorbeelden...</p>
+                        <div class="swiper example-swiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <img src="images/0-meting/evalueren/Energize.png" alt="Energize">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="images/0-meting/evalueren/omnient.png" alt="Omnient">
+                                </div>
+                            </div>
+                            <!-- Navigation buttons -->
+                            <div class="swiper-button-next"></div>
+                            <div class="swiper-button-prev"></div>
+                            <!-- Pagination -->
+                            <div class="swiper-pagination"></div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="script.js"></script>
+    <script src="swiper-init.js"></script>
 </body>
 </html>
 

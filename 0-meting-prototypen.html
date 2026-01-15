@@ -8,6 +8,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500&family=Dancing+Script:wght@400;700&family=Playfair+Display+SC:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 </head>
 <body>
     <!-- Hamburger Menu -->
@@ -61,7 +63,15 @@
                 </div>
                 <div class="competentie-content-wrapper">
                     <div class="competentie-content active" id="waar-ik-nu-sta">
-                        <p>Ik kan eenvoudige prototypes maken in Figma en deze gebruiken om mijn ideeën te testen bij gebruikers. Ik gebruik prototypes vooral om te onderzoeken of een concept duidelijk overkomt en of de interactie logisch aanvoelt. Dit helpt mij om snel te zien wat werkt en wat beter kan. Ik merk dat ik hier al vrij goed in ben, maar toch wil ik mijn prototypes naar een hoger niveau brengen. Vaak zien ze er nog wat eenvoudig uit, waardoor de gebruiker niet altijd goed begrijpt hoe het eindproduct eruit zou kunnen zien. Daarom wil ik leren werken met meer geavanceerde tools en technieken, zoals high-fidelity prototypes in Figma of interactieve prototypes die beter laten zien hoe een product echt zou werken. Ook wil ik leren hoe ik beter kan documenteren wat ik test, zodat ik mijn keuzes beter kan onderbouwen.</p>
+                        <div class="waar-ik-nu-sta-wrapper">
+                            <p>Ik kan eenvoudige prototypes maken in Figma en deze gebruiken om mijn ideeën te testen bij gebruikers. Ik gebruik prototypes vooral om te onderzoeken of een concept duidelijk overkomt en of de interactie logisch aanvoelt. Dit helpt mij om snel te zien wat werkt en wat beter kan. Ik merk dat ik hier al vrij goed in ben, maar toch wil ik mijn prototypes naar een hoger niveau brengen. Vaak zien ze er nog wat eenvoudig uit, waardoor de gebruiker niet altijd goed begrijpt hoe het eindproduct eruit zou kunnen zien. Daarom wil ik leren werken met meer geavanceerde tools en technieken, zoals high-fidelity prototypes in Figma of interactieve prototypes die beter laten zien hoe een product echt zou werken. Ook wil ik leren hoe ik beter kan documenteren wat ik test, zodat ik mijn keuzes beter kan onderbouwen.</p>
+                            <div class="progress-bar-container">
+                                <div class="progress-bar">
+                                    <div class="progress-bar-fill"></div>
+                                    <span class="progress-bar-text">85%</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="competentie-content" id="ontwikkeling">
                         <p>Tijdens eerdere projecten heb ik prototypes gebruikt om mijn ideeën te testen en feedback te krijgen. Bij groepsprojecten maakte ik eerst papieren schetsen om snel te kunnen aanpassen, en daarna digitale versies in Figma om te laten zien hoe een gebruiker door het ontwerp navigeert. Daardoor leerde ik hoe belangrijk het is om eerst iets simpels te testen in plaats van meteen alles perfect te willen maken. Door te werken met tools zoals Figma en soms Adobe XD, heb ik beter geleerd hoe ik interacties en overgangen kan laten zien. Zo kan ik mijn concepten duidelijker uitleggen. Wat ik nog lastig vind, is om de hele gebruikerservaring goed over te brengen, bijvoorbeeld het gevoel of de vloeiendheid van het gebruik. Dat wil ik verder ontwikkelen.</p>
@@ -79,14 +89,31 @@
                         </ul>
                     </div>
                     <div class="competentie-content" id="voorbeelden">
-                        <p>Hier komen voorbeelden...</p>
+                        <div class="swiper example-swiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <img src="images/0-meting/prototypen-en-uitwerken/fw-new-homepage-prototype.png" alt="FW New Homepage Prototype">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="images/0-meting/prototypen-en-uitwerken/mastercourse-prototype.png" alt="Mastercourse Prototype">
+                                </div>
+                            </div>
+                            <!-- Navigation buttons -->
+                            <div class="swiper-button-next"></div>
+                            <div class="swiper-button-prev"></div>
+                            <!-- Pagination -->
+                            <div class="swiper-pagination"></div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="script.js"></script>
+    <script src="swiper-init.js"></script>
 </body>
 </html>
 
