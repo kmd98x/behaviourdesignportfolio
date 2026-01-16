@@ -539,3 +539,66 @@ if (document.readyState === 'loading') {
 
 // Initialize accordion when competenties section becomes active
 // This is handled in initCarddeckNav when the tab is clicked
+
+// Lightbox functionality for carddeck images
+function initCarddeckLightbox() {
+    const imageWrappers = document.querySelectorAll('.carddeck-image-wrapper');
+    const lightboxModal = document.getElementById('lightboxModal');
+    const lightboxImage = document.getElementById('lightboxImage');
+    const lightboxClose = document.getElementById('lightboxClose');
+    const lightboxOverlay = document.querySelector('.lightbox-overlay');
+
+    if (!lightboxModal || !lightboxImage) return;
+
+    // Open lightbox
+    imageWrappers.forEach(wrapper => {
+        wrapper.addEventListener('click', (e) => {
+            e.preventDefault();
+            const img = wrapper.querySelector('.carddeck-content-image');
+            if (img) {
+                lightboxImage.src = img.src;
+                lightboxImage.alt = img.alt || '';
+                lightboxModal.classList.add('active');
+                document.body.style.overflow = 'hidden'; // Prevent background scrolling
+            }
+        });
+    });
+
+    // Close lightbox functions
+    function closeLightbox() {
+        lightboxModal.classList.remove('active');
+        document.body.style.overflow = ''; // Restore scrolling
+    }
+
+    // Close on close button click
+    if (lightboxClose) {
+        lightboxClose.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            closeLightbox();
+        });
+    }
+
+    // Close on overlay click
+    if (lightboxOverlay) {
+        lightboxOverlay.addEventListener('click', (e) => {
+            if (e.target === lightboxOverlay) {
+                closeLightbox();
+            }
+        });
+    }
+
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && lightboxModal.classList.contains('active')) {
+            closeLightbox();
+        }
+    });
+}
+
+// Initialize lightbox when DOM is ready
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initCarddeckLightbox);
+} else {
+    initCarddeckLightbox();
+}

@@ -49,10 +49,24 @@
                 
                 <img src="images/lijn.svg" alt="Carddeck" class="over-mij-title-image">
                 
-                <video controls class="carddeck-video">
-                    <source src="videos/carddeckfilm.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
+                <div class="carddeck-video-wrapper">
+                    <video controls class="carddeck-video">
+                        <source src="videos/carddeckfilm.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    
+                    <p class="carddeck-video-text">
+                        <img src="images/carddeck/arrow-jump-right.svg" class="arrow-right" alt="Pijlje">
+                        <img src="images/carddeck/big-circle.svg" alt="" class="carddeck-circle-bg">
+                        Omdat het onderwerp draaide om kaarten, wilde ik dat mijn prototype ook echt aanvoelde als een echte set speelkaarten. Daarom heb ik geprobeerd om het ontwerp zo vorm te geven dat het lijkt alsof je echte kaarten in handen hebt — bijvoorbeeld door het gebruik van afgeronde hoeken, een herkenbare achterkant en een 'flip'-effect in de digitale versie.
+                        Door te werken aan een realistisch prototype kon ik beter nadenken over vorm, gebruikservaring en presentatie. Het hielp mij om te begrijpen hoe een fysiek product digitaal overtuigend kan worden weergegeven.
+
+                        <a href="https://www.figma.com/design/hazm3CZKsfa34msiY1NEtb/Emotion-typology-carddeck-prototype?node-id=37-2&t=cfcx559w6F64khbP-0&fuid=1102224205114188958" style="font-family: 'Jacques Francois'; font-size: 16px;">
+                            Bekijk hier het bestand
+                            <img src="images/carddeck/slordige-lijn.svg" alt="Slordige lijn">
+                        </a>
+                    </p>
+                </div>
                 
                 <!-- Navigation -->
                 <nav class="carddeck-nav">
@@ -78,7 +92,15 @@
                         
                         <p class="carddeck-text">Daarnaast moest de card ook <strong>relevant zijn voor ontwerpers</strong>, met concrete tips, do's & don'ts en voorbeelden uit de praktijk.</p>
                         
-                        <img src="images/carddeck/legenda-opengeklapt.svg" alt="Legenda opengeklapt" class="carddeck-content-image">
+                        <div class="carddeck-image-wrapper" data-lightbox="legenda-opengeklapt">
+                            <img src="images/carddeck/legenda-opengeklapt.svg" alt="Legenda opengeklapt" class="carddeck-content-image">
+                            <div class="magnify-overlay">
+                                <svg class="magnify-icon" width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/>
+                                    <path d="m20 20-4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                            </div>
+                        </div>
                     </div>
                     
                     <!-- Waarom heb ik voor dit gekozen? -->
@@ -109,16 +131,6 @@
                                     <p class="carddeck-text">Daarnaast heb ik gebruikgemaakt van storytelling, zodat de uitleg niet alleen informatief was, maar ook herkenbaar en makkelijk te begrijpen. Door kleine voorbeelden of korte situaties toe te voegen, kon ik laten zien hoe een emotie in de praktijk voorkomt.</p>
                                 </div>
                             </div>
-                            <div class="accordion-item">
-                                <div class="accordion-header">
-                                    <span class="accordion-title">Prototypen en uitwerken</span>
-                                    <span class="accordion-arrow">›</span>
-                                </div>
-                                <div class="accordion-content">
-                                    <p class="carddeck-text">Omdat het onderwerp draaide om kaarten, wilde ik dat mijn prototype ook echt aanvoelde als een echte set speelkaarten. Daarom heb ik geprobeerd om het ontwerp zo vorm te geven dat het lijkt alsof je echte kaarten in handen hebt — bijvoorbeeld door het gebruik van afgeronde hoeken, een herkenbare achterkant en een 'flip'-effect in de digitale versie.</p>
-                                    <p class="carddeck-text">Door te werken aan een realistisch prototype kon ik beter nadenken over vorm, gebruikservaring en presentatie. Het hielp mij om te begrijpen hoe een fysiek product digitaal overtuigend kan worden weergegeven. (<a href="https://www.figma.com/design/hazm3CZKsfa34msiY1NEtb/Emotion-typology-carddeck-prototype?node-id=37-2&t=cfcx559w6F64khbP-0" class="figma-link" target="_blank">Bekijk prototype</a>)</p>
-                                </div>
-                            </div>
                         </div>
                     </div>
                     
@@ -133,6 +145,15 @@
                 </div>
                 
             </div>
+        </div>
+    </div>
+
+    <!-- Lightbox Modal -->
+    <div class="lightbox-modal" id="lightboxModal">
+        <div class="lightbox-overlay"></div>
+        <div class="lightbox-content">
+            <button class="lightbox-close" id="lightboxClose" aria-label="Sluiten">×</button>
+            <img class="lightbox-image" id="lightboxImage" src="" alt="">
         </div>
     </div>
 
