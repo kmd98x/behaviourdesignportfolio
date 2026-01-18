@@ -679,7 +679,7 @@ function initOrienterenAnimations() {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 const item = entry.target;
-                const arrow = item.querySelector('.orienteren-arrow');
+                const arrowWrapper = item.querySelector('.orienteren-arrow-wrapper');
                 const paragraph = item.querySelector('p');
                 
                 // Add delay for staggered animation
@@ -687,8 +687,9 @@ function initOrienterenAnimations() {
                 const delay = index * 100; // 100ms delay between each item
                 
                 setTimeout(() => {
-                    if (arrow) {
-                        arrow.classList.add('in-view');
+                    // Animate arrow and text together
+                    if (arrowWrapper) {
+                        arrowWrapper.classList.add('in-view');
                     }
                     if (paragraph) {
                         paragraph.classList.add('in-view');

@@ -866,29 +866,37 @@ a {
     margin: 0;
     width: 580px;
     opacity: 0;
-    transform: translateX(50px);
+    transform: scale(0);
     transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
 .orienteren-item p.in-view {
     opacity: 1;
-    transform: translateX(0);
+    transform: scale(1);
+}
+
+.orienteren-arrow-wrapper {
+    position: absolute;
+    left: -1080px;
+    right: auto;
+    pointer-events: none;
+    opacity: 0;
+    transform: scale(0);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.orienteren-arrow-wrapper.in-view {
+    opacity: 1;
+    transform: scale(1);
 }
 
 .orienteren-arrow {
     position: absolute;
-    right: 550px;
+    left: 0;
     width: auto;
     height: auto;
     pointer-events: none;
-    opacity: 0;
-    transform: translateX(50px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-.orienteren-arrow.in-view {
-    opacity: 1;
-    transform: translateX(0);
+    display: block;
 }
 
 .orienteren-item:nth-of-type(1) {
@@ -899,9 +907,14 @@ a {
     right: 0;
 }
 
+.orienteren-item:nth-of-type(1) .orienteren-arrow-wrapper {
+    left: -1090px;
+    right: auto;
+}
+
 .orienteren-item:nth-of-type(1) .orienteren-arrow {
     position: absolute;
-    right: 600px;
+    left: 0;
     width: 500px !important;
     margin-top: -20px;
 }
@@ -914,9 +927,14 @@ a {
     right: 0;
 }
 
+.orienteren-item:nth-of-type(2) .orienteren-arrow-wrapper {
+    left: -1090px;
+    right: auto;
+}
+
 .orienteren-item:nth-of-type(2) .orienteren-arrow {
     position: absolute;
-    right: 600px;
+    left: 0;
     width: 500px !important;
     margin-top: -17px;
 }
@@ -930,9 +948,14 @@ a {
     width: 580px;
 }
 
+.orienteren-item:nth-of-type(3) .orienteren-arrow-wrapper {
+    left: -1090px;
+    right: auto;
+}
+
 .orienteren-item:nth-of-type(3) .orienteren-arrow {
     position: absolute;
-    right: 600px;
+    left: 0;
     width: 500px !important;
 }
 
@@ -945,9 +968,14 @@ a {
     width: 580px;
 }
 
+.orienteren-item:nth-of-type(4) .orienteren-arrow-wrapper {
+    left: -1090px;
+    right: auto;
+}
+
 .orienteren-item:nth-of-type(4) .orienteren-arrow {
     position: absolute;
-    right: 600px;
+    left: 0;
     width: 500px !important;
 }
 
