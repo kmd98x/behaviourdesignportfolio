@@ -636,3 +636,82 @@ if (document.readyState === 'loading') {
 } else {
     initCarddeckSlideshow();
 }
+
+// Gewoonte Navigation functionality
+function initGewoonteNav() {
+    const navLinks = document.querySelectorAll('.gewoonte-nav-link');
+    const contentSections = document.querySelectorAll('.gewoonte-content-section');
+    
+    navLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            
+            const targetId = link.getAttribute('data-sectie');
+            
+            // Update active nav link
+            navLinks.forEach(l => l.classList.remove('active'));
+            link.classList.add('active');
+            
+            // Show corresponding content
+            contentSections.forEach(section => {
+                section.classList.remove('active');
+                if (section.id === targetId) {
+                    section.classList.add('active');
+                }
+            });
+        });
+    });
+}
+
+// Initialize gewoonte nav when DOM is ready
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initGewoonteNav);
+} else {
+    initGewoonteNav();
+}
+
+// Orienteren items scroll animation
+function initOrienterenAnimations() {
+    const orienterenItems = document.querySelectorAll('.orienteren-item');
+    if (orienterenItems.length === 0) return;
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const item = entry.target;
+                const arrow = item.querySelector('.orienteren-arrow');
+                const paragraph = item.querySelector('p');
+                
+                // Add delay for staggered animation
+                const index = Array.from(orienterenItems).indexOf(item);
+                const delay = index * 100; // 100ms delay between each item
+                
+                setTimeout(() => {
+                    if (arrow) {
+                        arrow.classList.add('in-view');
+                    }
+                    if (paragraph) {
+                        paragraph.classList.add('in-view');
+                    }
+                }, delay);
+                
+                // Unobserve after animation to prevent re-triggering
+                observer.unobserve(item);
+            }
+        });
+    }, {
+        threshold: 0.2, // Trigger when 20% of element is visible
+        rootMargin: '0px'
+    });
+    
+    orienterenItems.forEach(item => {
+        observer.observe(item);
+    });
+}
+
+// Initialize orienteren animations when DOM is ready
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initOrienterenAnimations);
+} else {
+    initOrienterenAnimations();
+}
