@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montez&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Jacques+Francois&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lavishly+Yours&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gaegu&display=swap');
 
 
 /* Reset and Base Styles */
@@ -16,6 +18,9 @@
     --text-gray: #A0A0A0;
     --text-light: #ffffff;
     --text-dark: rgba(75, 82, 99, 0.75);
+    --font-montez: 'Montez', cursive;
+    --font-jacques: 'Jacques Francois', serif;
+    --font-script: "Gaegu", sans-serif;
 }
 
 body {
@@ -29,17 +34,17 @@ body {
 
 /* All headings use Montez font */
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Montez', cursive;
+    font-family: var(--font-montez);
 }
 
 /* All paragraphs use Jacques Francois font */
 p {
-    font-family: 'Jacques Francois', serif;
+    font-family: var(--font-jacques);
 }
 
 /* All anchor tags use Montez font */
 a {
-    font-family: 'Montez', cursive;
+    font-family: var(--font-montez);
     color: var(--text-light);
 }
 
@@ -150,7 +155,7 @@ a {
 .menu-item {
     color: var(--orange);
     text-decoration: none;
-    font-family: 'Montez', cursive;
+    font-family: var(--font-montez);
     font-size: 42px;
     font-weight: 400;
     letter-spacing: 0.5px;
@@ -209,7 +214,7 @@ a {
 .submenu-item {
     color: var(--orange);
     text-decoration: none;
-    font-family: 'Montez', cursive;
+    font-family: var(--font-montez);
     font-size: 24px;
     font-weight: 300;
     letter-spacing: 0.5px;
@@ -310,7 +315,7 @@ a {
 
 /* Section Titles */
 .section-title {
-    font-family: 'Montez', cursive;
+    font-family: var(--font-montez);
     font-size: 72px;
     font-weight: 700;
     color: var(--orange);
@@ -487,7 +492,7 @@ a {
 }
 
 .over-mij-text .section-title {
-    font-family: 'Montez', cursive;
+    font-family: var(--font-montez);
     font-size: 48px;
     font-weight: 400;
     margin-bottom: 0;
@@ -526,7 +531,7 @@ a {
 }
 
 .text-content {
-    font-family: 'Jacques Francois', serif;
+    font-family: var(--font-jacques);
     font-size: 18px;
     line-height: 1.8;
     color: var(--text-light);
@@ -587,7 +592,7 @@ a {
 }
 
 .competentie-number {
-    font-family: 'Jacques Francois', serif;
+    font-family: var(--font-jacques);
     font-size: 24px;
     font-weight: 600;
     color: var(--orange);
@@ -597,7 +602,7 @@ a {
 }
 
 .competentie-name {
-    font-family: 'Jacques Francois', serif;
+    font-family: var(--font-jacques);
     font-size: 20px;
     color: var(--text-light);
     flex: 1;
@@ -657,7 +662,7 @@ a {
 }
 
 .competentie-nav-link {
-    font-family: 'Jacques Francois', serif;
+    font-family: var(--font-jacques);
     font-size: 18px;
     color: var(--text-light);
     text-decoration: none;
@@ -702,7 +707,7 @@ a {
 }
 
 .competentie-content p {
-    font-family: 'Jacques Francois', serif;
+    font-family: var(--font-jacques);
     font-size: 18px;
     line-height: 1.8;
     color: var(--text-light);
@@ -710,7 +715,7 @@ a {
 }
 
 .competentie-content ul {
-    font-family: 'Jacques Francois', serif;
+    font-family: var(--font-jacques);
     font-size: 18px;
     line-height: 1.8;
     color: var(--text-light);
@@ -739,7 +744,7 @@ a {
 }
 
 .page-content .section-title {
-    font-family: 'Montez', cursive;
+    font-family: var(--font-montez);
     font-size: 48px;
     font-weight: 400;
     margin-bottom: 0;
@@ -1081,7 +1086,7 @@ a {
 }
 
 .accordion-number {
-    font-family: 'Jacques Francois', serif;
+    font-family: var(--font-jacques);
     font-size: 20px;
     color: var(--orange);
     font-weight: 400;
@@ -1089,14 +1094,14 @@ a {
 }
 
 .accordion-title {
-    font-family: 'Jacques Francois', serif;
+    font-family: var(--font-jacques);
     font-size: 24px;
     color: var(--text-light);
     flex: 1;
 }
 
 .accordion-arrow {
-    font-family: 'Jacques Francois', serif;
+    font-family: var(--font-jacques);
     font-size: 32px;
     color: var(--orange);
     transition: transform 0.3s ease;
@@ -1130,7 +1135,7 @@ a {
 }
 
 .accordion-subtitle {
-    font-family: 'Jacques Francois', serif;
+    font-family: var(--font-jacques);
     font-size: 20px;
     color: var(--orange);
     margin-bottom: 10px;
@@ -1138,7 +1143,7 @@ a {
 }
 
 .accordion-content p {
-    font-family: 'Jacques Francois', serif;
+    font-family: var(--font-jacques);
     font-size: 16px;
     color: var(--text-light);
     line-height: 1.6;
@@ -1458,7 +1463,7 @@ a {
 .carddeck-video-text {
     position: relative;
     text-align: center;
-    font-family: 'Jacques Francois', serif;
+    font-family: var(--font-jacques);
     font-size: 18px;
     line-height: 1.9;
     color: #ffffff;
@@ -1501,8 +1506,23 @@ a {
     opacity: 0.6;
 }
 
+.loop-arrow-down {
+    position: absolute;
+    left: 60%;
+    bottom: -130px;
+}
+
+.prototypen-en-uitwerken-tekst {
+    position: absolute;
+    left: 52%;
+    bottom: -190px;
+    font-family: var(--font-script);
+    font-size: 36px;
+    color: #FD5E01;
+}
+
 .carddeck-section-heading {
-    font-family: 'Jacques Francois', serif;
+    font-family: var(--font-jacques);
     font-size: 26px;
     color: var(--orange);
     margin-bottom: 25px;
@@ -1510,7 +1530,8 @@ a {
 }
 
 .carddeck-text {
-    font-family: 'Jacques Francois', serif;
+    font-family: var(--font-jacques);
+    margin-top: 20px;
     font-size: 18px;
     line-height: 1.9;
     color: #ffffff;
@@ -1523,22 +1544,28 @@ a {
 }
 
 .carddeck-list {
-    font-family: 'Jacques Francois', serif;
+    font-family: var(--font-jacques);
     font-size: 18px;
     line-height: 1.9;
     color: var(--text-light);
-    margin-left: 25px;
-    margin-bottom: 20px;
+    padding: 0;
     list-style-type: disc;
+    display: flex;
+    gap: 20px;
 }
 
 .carddeck-list li {
     margin-bottom: 10px;
+    list-style: none;
 }
 
-.carddeck-list li strong {
-    color: #ffffff;
-    font-weight: 400;
+.carddeck-list li img {
+    border-radius: 12px;
+    transition: .3s;
+}
+.carddeck-list li img:hover {
+    box-shadow: 0 10px 30px rgba(253, 94, 1, .1);
+    transform: scale(1.05);
 }
 
 /* Carddeck Navigation */
@@ -1551,7 +1578,7 @@ a {
 }
 
 .carddeck-nav-link {
-    font-family: 'Jacques Francois', serif;
+    font-family: var(--font-jacques);
     font-size: 18px;
     color: var(--text-light);
     text-decoration: none;
@@ -1612,14 +1639,14 @@ a {
 }
 
 .carddeck-accordion .accordion-title {
-    font-family: 'Jacques Francois', serif;
+    font-family: var(--font-jacques);
     font-size: 24px;
     color: var(--text-light);
     flex: 1;
 }
 
 .carddeck-accordion .accordion-arrow {
-    font-family: 'Jacques Francois', serif;
+    font-family: var(--font-jacques);
     font-size: 32px;
     color: var(--orange);
     transition: transform 0.3s ease;
@@ -1645,7 +1672,7 @@ a {
 }
 
 .carddeck-accordion .accordion-content p {
-    font-family: 'Jacques Francois', serif;
+    font-family: var(--font-jacques);
     font-size: 18px;
     line-height: 1.9;
     color: #ffffff;
@@ -1682,7 +1709,7 @@ a {
 }
 
 .hero-main-title {
-    font-family: 'Jacques Francois', serif;
+    font-family: var(--font-jacques);
     font-size: 64px;
     color: var(--text-light);
     font-weight: 400;
@@ -1691,7 +1718,7 @@ a {
 }
 
 .hero-description {
-    font-family: 'Jacques Francois', serif;
+    font-family: var(--font-jacques);
     font-size: 19px;
     line-height: 1.9;
     color: var(--text-light);
@@ -1727,7 +1754,7 @@ a {
 }
 
 .sexi-icon {
-    font-family: 'Montez', cursive;
+    font-family: var(--font-montez);
     font-size: 72px;
     color: var(--orange);
     line-height: 1;
@@ -1736,7 +1763,7 @@ a {
 }
 
 .sexi-title {
-    font-family: 'Jacques Francois', serif;
+    font-family: var(--font-jacques);
     font-size: 28px;
     color: var(--text-light);
     margin: 0 0 12px 0;
@@ -1753,7 +1780,7 @@ a {
 
 /* Section Headers with Numbers */
 .section-number {
-    font-family: 'Montez', cursive;
+    font-family: var(--font-montez);
     font-size: 120px;
     line-height: 1;
     color: var(--orange);
@@ -1765,7 +1792,7 @@ a {
 }
 
 .section-title-creative {
-    font-family: 'Jacques Francois', serif;
+    font-family: var(--font-jacques);
     font-size: 48px;
     color: var(--orange);
     font-weight: 400;
@@ -1795,7 +1822,7 @@ a {
 }
 
 .why-content p {
-    font-family: 'Jacques Francois', serif;
+    font-family: var(--font-jacques);
     font-size: 19px;
     line-height: 1.9;
     color: var(--text-light);
@@ -1838,7 +1865,7 @@ a {
 }
 
 .comp-number-large {
-    font-family: 'Montez', cursive;
+    font-family: var(--font-montez);
     font-size: 140px;
     line-height: 1;
     color: var(--orange);
@@ -1852,7 +1879,7 @@ a {
 }
 
 .comp-title-main {
-    font-family: 'Jacques Francois', serif;
+    font-family: var(--font-jacques);
     font-size: 42px;
     color: var(--text-light);
     font-weight: 400;
@@ -1901,7 +1928,7 @@ a {
 }
 
 .comp-text-block p {
-    font-family: 'Jacques Francois', serif;
+    font-family: var(--font-jacques);
     font-size: 19px;
     line-height: 1.9;
     color: var(--text-light);
@@ -1954,7 +1981,7 @@ a {
 }
 
 .reflectie-content-full p {
-    font-family: 'Jacques Francois', serif;
+    font-family: var(--font-jacques);
     font-size: 19px;
     line-height: 1.9;
     color: var(--text-light);
