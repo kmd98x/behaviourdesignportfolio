@@ -502,13 +502,10 @@ function initCarddeckAccordion() {
                 
                 const isActive = item.classList.contains('active');
                 
-                // Close all items
-                freshItems.forEach(otherItem => {
-                    otherItem.classList.remove('active');
-                });
-                
-                // Toggle: open if closed, close if open
-                if (!isActive) {
+                // Toggle: open if closed, close if open (allow multiple items open)
+                if (isActive) {
+                    item.classList.remove('active');
+                } else {
                     item.classList.add('active');
                 }
             });
@@ -601,4 +598,41 @@ if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', initCarddeckLightbox);
 } else {
     initCarddeckLightbox();
+}
+
+// Carddeck Slideshow functionality
+function initCarddeckSlideshow() {
+    const slideshowContainer = document.querySelector('.carddeck-slideshow');
+    if (!slideshowContainer) return;
+    
+    const images = slideshowContainer.querySelectorAll('.slideshow-image');
+    if (images.length === 0) return;
+    
+    let currentIndex = 0;
+    
+    function showNextImage() {
+        // Remove active class from current image
+        images[currentIndex].classList.remove('active');
+        
+        // Move to next image (loop back to first if at end)
+        currentIndex = (currentIndex + 1) % images.length;
+        
+        // Add active class to new image
+        images[currentIndex].classList.add('active');
+    }
+    
+    // Initialize: show first image
+    if (images.length > 0) {
+        images[0].classList.add('active');
+    }
+    
+    // Auto-advance slideshow every 3 seconds
+    setInterval(showNextImage, 3000);
+}
+
+// Initialize slideshow when DOM is ready
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initCarddeckSlideshow);
+} else {
+    initCarddeckSlideshow();
 }
