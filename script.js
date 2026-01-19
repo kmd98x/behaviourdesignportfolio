@@ -716,3 +716,86 @@ if (document.readyState === 'loading') {
 } else {
     initOrienterenAnimations();
 }
+
+// Verbeelden arrows scroll animation (same style as first tab)
+function initVerbeeldenArrows() {
+    const verbeeldenItems = document.querySelectorAll('.verbeelden-arrow-item');
+    if (verbeeldenItems.length === 0) return;
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const item = entry.target;
+
+                // Add delay for staggered animation
+                const index = Array.from(verbeeldenItems).indexOf(item);
+                const delay = index * 100; // 100ms delay between each item
+
+                setTimeout(() => {
+                    item.classList.add('in-view');
+                }, delay);
+
+                // Unobserve after animation to prevent re-triggering
+                observer.unobserve(item);
+            }
+        });
+    }, {
+        threshold: 0.2,
+        rootMargin: '0px'
+    });
+
+    verbeeldenItems.forEach(item => {
+        observer.observe(item);
+    });
+}
+
+// Initialize verbeelden arrows when DOM is ready
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initVerbeeldenArrows);
+} else {
+    initVerbeeldenArrows();
+}
+
+// Verbeelden video play/pause functionality
+function initVerbeeldenVideo() {
+    const video = document.querySelector('.verbeelden-video');
+    const playPauseButton = document.querySelector('.verbeelden-video-play-pause');
+    
+    if (!video || !playPauseButton) return;
+    
+    // Update button state based on video playing state
+    function updateButtonState() {
+        if (video.paused) {
+            playPauseButton.classList.remove('playing');
+        } else {
+            playPauseButton.classList.add('playing');
+        }
+    }
+    
+    // Initial state
+    updateButtonState();
+    
+    // Toggle play/pause on button click
+    playPauseButton.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        
+        if (video.paused) {
+            video.play();
+        } else {
+            video.pause();
+        }
+        updateButtonState();
+    });
+    
+    // Update button state when video plays/pauses
+    video.addEventListener('play', updateButtonState);
+    video.addEventListener('pause', updateButtonState);
+}
+
+// Initialize verbeelden video when DOM is ready
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initVerbeeldenVideo);
+} else {
+    initVerbeeldenVideo();
+}

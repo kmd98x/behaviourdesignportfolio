@@ -979,6 +979,149 @@ a {
     width: 500px !important;
 }
 
+#verbeelden {
+    width: 100%;
+    margin-top: 50px;
+}
+
+.verbeelden-text {
+    width: 100%;
+    margin: 0;
+    line-height: 1.6;
+}
+
+.verbeelden-video-wrapper {
+    width: 100%;
+    max-width: 520px;
+    margin-top: 30px;
+    display: flex;
+    justify-content: flex-start;
+    position: relative;
+}
+
+/* .lunch-calendar-wrapper {
+    margin-top: 130px;
+    display: flex;
+    align-items: flex-end;
+    width: 100%;
+} */
+
+.lunch-calendar-wrapper img {
+    margin-left: auto;
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Shared animation + layout for all verbeelden arrow items */
+.verbeelden-arrow-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    opacity: 0;
+    transform: scale(0);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.verbeelden-arrow-item.in-view {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.verbeelden-arrow-item .big-arrow-right {
+    width: auto;
+    height: auto;
+    flex-shrink: 0;
+}
+
+.verbeelden-arrow-item p {
+    margin: 0;
+    white-space: nowrap;
+}
+
+/* Positioning for arrows next to the video */
+.verbeelden-video-wrapper .verbeelden-arrow-item {
+    position: absolute;
+    left: 470px;
+}
+
+.verbeelden-video-wrapper .verbeelden-arrow-item:nth-of-type(1) {
+    top: 200px;
+}
+
+.verbeelden-video-wrapper .verbeelden-arrow-item:nth-of-type(2) {
+    top: 325px;
+}
+
+/* Positioning + orientation for arrows next to the lunch calendar */
+.lunch-calendar-wrapper .verbeelden-arrow-item {
+    position: static;
+    flex-direction: row-reverse; /* text on the left, arrow on the right */
+    margin-right: 24px;
+}
+
+.lunch-calendar-wrapper .verbeelden-arrow-item .big-arrow-right {
+    transform: rotate(180deg);
+}
+
+.lunch-calendar-wrapper .verbeelden-arrow-item p {
+    white-space: nowrap;
+}
+
+.verbeelden-video {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    display: block;
+}
+
+.verbeelden-video-play-pause {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.7);
+    border: none;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s ease, background-color 0.3s ease;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.verbeelden-video-wrapper:hover .verbeelden-video-play-pause {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.verbeelden-video-play-pause:hover {
+    background: rgba(0, 0, 0, 0.9);
+}
+
+.verbeelden-video-play-pause svg {
+    width: 24px;
+    height: 24px;
+    color: white;
+}
+
+.verbeelden-video-play-pause .pause-icon {
+    display: none;
+}
+
+.verbeelden-video-play-pause.playing .play-icon {
+    display: none;
+}
+
+.verbeelden-video-play-pause.playing .pause-icon {
+    display: block;
+}
+
 /* Competenties Container */
 .competenties-container {
     margin-top: 50px;

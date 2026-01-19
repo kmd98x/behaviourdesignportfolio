@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500&family=Dancing+Script:wght@400;700&family=Playfair+Display+SC:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="tailwind.css">
 </head>
 <body>
     <!-- Hamburger Menu -->
@@ -150,10 +151,48 @@
                         </div>
                         
                         <div id="verbeelden" class="gewoonte-content-section">
-                            <!-- Content komt hier -->
+                            <p class="verbeelden-text">Om mensen te helpen met het besparen van geld, heb ik een app ontwikkelt waarin een draaiwiel met verschillende recepten aanwezig is. Via het draaien aan dit wiel kun je bepalen wat je die dag als lunch kan maken als je geen inspiratie hebt en om te voorkomen dat je geld uitgeeft aan het kopen van lunch. In de app staat onderin een voortgang bar voor extra motivatie en overzicht in de hoeveelheid geld die al bespaard is. Er is visuele feedback door de aanwezigheid van smlieys die de stemming/emotie aangeven.</p>
+                            
+                            <div class="verbeelden-video-wrapper">
+                                <video class="verbeelden-video" muted autoplay loop>
+                                    <source src="videos/wielfilm.mp4" type="video/mp4">
+                                    Je browser ondersteunt de video tag niet.
+                                </video>
+                                <button class="verbeelden-video-play-pause" aria-label="Play/Pause video">
+                                    <svg class="play-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M8 5v14l11-7z" fill="currentColor"/>
+                                    </svg>
+                                    <svg class="pause-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z" fill="currentColor"/>
+                                    </svg>
+                                </button>
+
+                                <div class="verbeelden-arrow-item">
+                                    <img src="images/gewoonte/big-arrow-right.svg" class="big-arrow-right" alt="">
+                                    <p>Gamification: app met draaiwiel voor random recept</p>
+                                </div>
+                                <div class="verbeelden-arrow-item">
+                                    <img src="images/gewoonte/big-arrow-right.svg" class="big-arrow-right" alt="">
+                                    <p>Simplification: 1 knop = random recept (geen keuzestress)</p>
+                                </div>
+                            </div>
+
+                            <div class="lunch-calendar-wrapper relative flex items-cener justify-center">
+                                <div class="flex gap-3 items-center absolute left-0 top-[50px] w-[500px]">
+                                    <p class="mb-0!">Tracking systeem voor voortgang</p>
+                                    <img src="images/gewoonte/big-arrow-right.svg" class="rotate-180 -mt-2 " alt="Tracking systeem voor voortgang">
+                                </div>
+
+                                <div class="flex gap-3 items-center absolute left-0 top-[300px]">
+                                    <p class="mb-0!">Visuele feedback (smileys)</p>
+                                    <img src="images/gewoonte/big-arrow-right.svg" class="rotate-180 -mt-2 w-[200px]" alt="Visuele feedback (smileys)">
+                                </div>
+
+                                <img src="images/gewoonte/lunch-calendar.png" alt="Lunch kalender">
+                            </div>
                         </div>
                         <div id="prototypen" class="gewoonte-content-section">
-                            <!-- Content komt hier -->
+                            
                         </div>
                         <div id="evalueren" class="gewoonte-content-section">
                             <!-- Content komt hier -->
