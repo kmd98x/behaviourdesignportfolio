@@ -294,7 +294,7 @@ export default function BootcampPage() {
 					<div className='text-lg mt-20!'>
 						<p className='text-2xl font-bold text-orange-500 mb-4!'>Reflectie</p>
 						<p className='mb-4!'>Tijdens dit project merkte ik dat het soms lastig was om mijn ideeën echt goed over te brengen. Vaak had ik het gevoel dat mijn ideeën niet helemaal werden meegenomen in het eindresultaat. Daardoor twijfelde ik soms aan mezelf en nam ik een stapje terug in plaats van door te zetten.</p>
-						
+
 						<p>Ook had ik moeite met de stijl van de app. Het was niet echt mijn smaak, en daardoor vond ik het lastig om enthousiast te blijven. Toch heb ik uiteindelijk wel geprobeerd me aan te passen en binnen die stijl iets toe te voegen dat bij mij paste. Dat was een goede les in samenwerken en omgaan met verschillende meningen. Wat ik hiervan geleerd heb, is dat ik meer vertrouwen mag hebben in mijn eigen ideeën, ook als ze anders zijn. En dat samenwerken soms betekent dat je een middenweg moet vinden, zonder jezelf helemaal kwijt te raken.</p>
 					</div>
 				</div>
