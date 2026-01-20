@@ -17,7 +17,7 @@ export default function BootcampPage() {
 			<div className="over-mij-content">
 				<div className="over-mij-text">
 					<h1 className="section-title">Bootcamp</h1>
-					<img src="images/lijn.svg" alt="Bootcamp" className="over-mij-title-image" />
+					<img src="/images/lijn.svg" alt="Bootcamp" className="over-mij-title-image" />
 
 					<p className="text-lg text-orange-500">Korte beschrijving van de opdracht</p>
 					<p className="mt-8!">Tijdens de bootcamp hebben we een groepsopdracht gedaan over consuminderen.Ons team richtte zich op het verminderen van energieverbruik in huis. Onze doelgroep was de partner van een van onze groepsgenoten. Omdat het maar 1 persoon was, konden we een heel persoonlijk en passend concept maken.Ons idee helpt hem makkelijk en op een leuke manier zijn lampen en apparaten uit te zetten, zodat hij bewuster met energie omgaat en tegelijk beloningen kan verdienen.</p>

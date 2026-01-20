@@ -36,6 +36,8 @@ jobs:
         run: npm run build
         env:
           NODE_ENV: production
+          GITHUB_ACTIONS: true
+          NEXT_PUBLIC_BASE_PATH: /behaviourdesignportfolio
 
       - name: Setup Pages
         uses: actions/configure-pages@v4

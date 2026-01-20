@@ -449,7 +449,7 @@ export default function Gewoonte() {
 											<div className='absolute mt-12!'>
 												<p>Klik hier om de live app te bekijken(<a className='font-montez' href="https://kmd98x.github.io/kmdgewoonteopdracht/">https://kmd98x.github.io/kmdgewoonteopdracht/</a>)</p>
 
-												<img src="images/gewoonte/left-arrow-curved.svg" className='rotate-[20] absolute -top-24 -right-48' width={148} alt="Pijl naar links" />
+												<img src="/images/gewoonte/left-arrow-curved.svg" className='rotate-[20] absolute -top-24 -right-48' width={148} alt="Pijl naar links" />
 											</div>
 										</div>
 									</div>
