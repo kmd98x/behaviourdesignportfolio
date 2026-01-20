@@ -1,9 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  output: 'export',
   images: {
-    unoptimized: true, // For static export if needed
+    unoptimized: true, // Required for static export
   },
+  basePath: process.env.NODE_ENV === 'production' ? '/behaviourdesignportfolio' : '',
+  assetPrefix: process.env.NODE_ENV === 'production' ? '/behaviourdesignportfolio' : '',
 }
 
 module.exports = nextConfig
