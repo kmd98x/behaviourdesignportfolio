@@ -29,7 +29,7 @@
     "tailwindcss": "^4.1.18"
   },
   "dependencies": {
-    "next": "^16.1.3",
+    "next": "^16.1.4",
     "react": "^19.2.3",
     "react-dom": "^19.2.3",
     "swiper": "^11.2.10"

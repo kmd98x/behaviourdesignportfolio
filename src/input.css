@@ -1,9 +1,9 @@
 @import "tailwindcss";
 
 @theme {
-  --font-family-montez: var(--font-montez), cursive;
-  --font-family-jacques-francois: var(--font-jacques-francois), serif;
-  --font-family-gaegu: var(--font-gaegu), sans-serif;
+  --font-montez: "Montez", cursive;
+  --font-jacques: "Jacques Francois", serif;
+  --font-gaegu: "Gaegu", sans-serif;
 
   --color-orange-500: #fd5e01;
 }

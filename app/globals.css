@@ -1,2 +1,8 @@
-@import "tailwindcss";
 @import '../styles.css';
+@import "tailwindcss";
+
+@theme {
+  --font-montez: "Montez", cursive;
+  --font-jacques: "Jacques Francois", serif;
+  --font-gaegu: "Gaegu", sans-serif;
+}
