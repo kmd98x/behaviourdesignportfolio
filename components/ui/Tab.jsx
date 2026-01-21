@@ -3,7 +3,7 @@ export default function Tab({ label, sectionId, activeSection, onClick, classNam
 
 	return (
 		<button
-			className={`font-jacques-francois text-lg no-underline relative transition-all duration-300 whitespace-nowrap shrink-0 px-[25px]! py-[15px]! border border-white/20 rounded-[50px] ${
+			className={`font-jacques text-lg no-underline relative transition-all duration-300 whitespace-nowrap shrink-0 px-[25px]! py-[15px]! border border-white/20 rounded-[50px] ${
 				isActive
 					? 'text-orange-500 bg-[#181819]'
 					: 'text-gray-300 bg-[#181819] hover:text-orange-500 hover:bg-[rgba(24,24,25,0.8)]'
