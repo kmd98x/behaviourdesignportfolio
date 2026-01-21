@@ -1764,8 +1764,7 @@ a {
     width: 0%;
     background-color: var(--orange);
     border-radius: 15px;
-    animation: fillProgress 3s ease-out forwards;
-    --progress-width: 65%;
+    transition: width 0.05s ease-out;
 }
 
 .progress-bar-text {

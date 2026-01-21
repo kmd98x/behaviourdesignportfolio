@@ -45,6 +45,10 @@ export default function HamburgerMenu() {
 						<Link
 							href="/Inhoudsopgave"
 							className="menu-item has-submenu"
+							onClick={() => {
+								setSubmenuOpen(false)
+								closeMenu()
+							}}
 						>
 							Inhoud
 						</Link>
