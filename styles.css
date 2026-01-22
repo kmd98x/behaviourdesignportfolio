@@ -1831,8 +1831,13 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: transparent;
+    background: transparent !important;
     transition: transform 0.3s ease;
+}
+
+.example-swiper .swiper-slide::before,
+.example-swiper .swiper-slide::after {
+    background: transparent !important;
 }
 
 .example-swiper .swiper-slide img {
@@ -1846,7 +1851,8 @@ a {
 /* Ensure proper 3D transforms for coverflow */
 .example-swiper .swiper-slide-shadow-left,
 .example-swiper .swiper-slide-shadow-right {
-    background-image: linear-gradient(to left, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0));
+    background-image: none;
+    background: transparent;
 }
 
 @media (max-width: 768px) {
