@@ -72,6 +72,17 @@ export default function WorkshopPage() {
 					<div className="mt-8!">
 						<div className={activeSection === 'orienteren' ? 'block' : 'hidden'}>
 							<p>Ik keek The Mind Explained op Netflix en verdiepte me in de aflevering over dromen. Door sketchnotes te maken kon ik de complexe informatie over hersenen en droomfasen beter begrijpen en verwerken. Ook heb ik verder research gedaan, omdat ik meer informatie nodig had voor mijn workshop.</p>
+
+							<div className='mt-20! flex flex-col items-center justify-center'>
+								<video
+									src="/videos/tablet-sketchnotes.mp4"
+									autoPlay
+									loop
+									muted
+									playsInline
+									className="w-full max-w-[700px] h-auto block rounded-xl"
+								/>
+							</div>
 						</div>
 						<div className={activeSection === 'verbeelden' ? 'block' : 'hidden'}>
 							<p>Na het verzamelen van kennis moest ik bedenken hoe ik deze informatie op een begrijpelijke manier kon overbrengen. Ik koos voor een informatieve workshop met een duidelijke structuur: eerst algemene informatie, dan een interactieve quiz, en daarna verdiepende uitleg. Om het abstracte concept van dromen en hersenen tastbaar te maken, ontwierp ik een chunk - een fysiek object waar de informatie visueel uit te halen is. Door de quiz toe te voegen maakte ik de workshop interactief, zodat deelnemers actief betrokken bleven. Zo vertaalde ik complexe wetenschappelijke informatie naar een toegankelijke en begrijpelijke vorm.</p>
@@ -117,7 +128,7 @@ export default function WorkshopPage() {
 						<div className={activeSection === 'prototypen' ? 'block' : 'hidden'}>
 							<p>Ik maakte alles wat ik had bedacht: een quiz over dromen, visueel materiaal zoals sketchnotes en een presentatie, en een chunk - een tastbaar object over hersenen en dromen. Vervolgens voerde ik de workshop uit met deelnemers volgens de structuur.</p>
 
-							<div className='mt-8! flex flex-col items-center justify-center gap-20'>
+							<div className='mt-8! flex flex-col items-center justify-center gap-2'>
 								<video
 									src="/videos/dreamsfilm.mp4"
 									autoPlay
@@ -137,7 +148,7 @@ export default function WorkshopPage() {
 									/>
 
 									<p className='text-lg absolute top-2/3 -right-32'>Chunk</p>
-	
+
 									<Image
 										src="/images/workshop/chunk.png"
 										alt="Chunk"

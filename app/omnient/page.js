@@ -24,9 +24,16 @@ export default function OmnientPage() {
 			<div className="over-mij-content">
 				<div className="over-mij-text">
 					<h1 className="section-title">Omnient</h1>
+					<Image
+						src="/images/lijn.svg"
+						alt="Gewoonte"
+						className="over-mij-title-image"
+						width={371}
+						height={50}
+					/>
 
 					<div className="text-lg leading-[1.8] w-full mt-8!">
-						<h2>Korte beschrijving van de opdracht</h2>
+						<h2 className='text-orange-500 text-lg'>Korte beschrijving van de opdracht</h2>
 
 						<p className="mb-4! mt-4!">
 							Voor dit project werkten we in een team van 3 studenten aan een opdracht van RockportInk. Het doel was om een tool te ontwikkelen voor
@@ -58,11 +65,11 @@ export default function OmnientPage() {
 							</p>
 
 							<Image
-								src="/images/carddeck/big-circle.svg"
+								src="/images/omnient/big-circle.svg"
 								alt="Big circle"
 								width={500}
 								height={500}
-								className="w-full max-w-[500px] -rotate-13 scale-125 h-auto block mt-8! absolute top-1/2 -translate-y-1/2 right-10"
+								className="w-full max-w-[500px] scale-125 h-auto block absolute top-1/2 -translate-y-1/2 right-10"
 							/>
 						</div>
 					</div>
@@ -182,7 +189,7 @@ export default function OmnientPage() {
 							<p>Met de inzichten uit ons onderzoek gingen we concepten bedenken. We ontwikkelden twee hoofdconcepten: een fysiek bordspel en een digitale app. Beide concepten moesten jonge leiders helpen om hun gedragspatronen te herkennen en te reflecteren. Voor Concept 1 gebruikten we het Predraft Change Tactics framework om na te denken over hoe we gedragsverandering konden stimuleren. Voor Concept 2 kozen we het Duwtje (Nudge) framework om subtiele sturen in te bouwen. We visualiseerden beide concepten en bedachten hoe de gebruikerservaring eruit zou zien. Ook maakten we een ethische stakeholderanalyse om na te denken over de impact van onze tool: wie heeft er baat bij? Welke risico's zijn er? Hoe beschermen we privacy? Om onze concepten te testen, ontwikkelden we een testplan met duidelijke vragen en succesindicatoren. We bedachten spelregels voor het OMNI-bordspel en maakten een eerste versie van de app-interface.</p>
 
 							<ul className="mt-8! font-jacques!">
-								<li>Live app concept 1:</li>
+								<li>Live app concept 1: <a href="https://kmd98x.github.io/reflectie/" className="font-jacques!" target="_blank" rel="noopener noreferrer">https://kmd98x.github.io/reflectie/</a></li>
 								<li>Live app concept 2: <a href="https://testminorkmd.vercel.app/" className="font-jacques!" target="_blank" rel="noopener noreferrer">https://testminorkmd.vercel.app/</a></li>
 							</ul>
 
@@ -204,26 +211,6 @@ export default function OmnientPage() {
 								modules={[EffectCoverflow, Navigation, Pagination]}
 								className="example-swiper mt-12!"
 							>
-								<SwiperSlide>
-									<Image
-										src="/images/omnient/omnient-orienteren-afbeelding-1.png"
-										alt="Omnient orienteren afbeelding 1"
-										width={900}
-										height={600}
-										className="w-full h-auto rounded-lg shadow-lg"
-									/>
-								</SwiperSlide>
-
-								<SwiperSlide>
-									<Image
-										src="/images/omnient/omnient-orienteren-afbeelding-2.png"
-										alt="Omnient orienteren afbeelding 2"
-										width={900}
-										height={600}
-										className="w-full h-auto rounded-lg shadow-lg"
-									/>
-								</SwiperSlide>
-
 								<SwiperSlide>
 									<div className="w-full max-w-[900px] h-[420px] mx-auto flex items-center justify-center bg-black/40 rounded-lg shadow-lg overflow-hidden">
 										<video
@@ -248,6 +235,26 @@ export default function OmnientPage() {
 											className="w-full h-full object-contain"
 										/>
 									</div>
+								</SwiperSlide>
+
+								<SwiperSlide>
+									<Image
+										src="/images/omnient/omnient-orienteren-afbeelding-1.png"
+										alt="Omnient orienteren afbeelding 1"
+										width={900}
+										height={600}
+										className="w-full h-auto rounded-lg shadow-lg"
+									/>
+								</SwiperSlide>
+
+								<SwiperSlide>
+									<Image
+										src="/images/omnient/omnient-orienteren-afbeelding-2.png"
+										alt="Omnient orienteren afbeelding 2"
+										width={900}
+										height={600}
+										className="w-full h-auto rounded-lg shadow-lg"
+									/>
 								</SwiperSlide>
 							</Swiper>
 						</div>
@@ -277,6 +284,21 @@ export default function OmnientPage() {
 								modules={[EffectCoverflow, Navigation, Pagination]}
 								className="example-swiper mt-12!"
 							>
+
+
+								<SwiperSlide className="w-[900px]!">
+									<div className="w-full h-[600px] flex items-center justify-center bg-black/40 rounded-lg shadow-lg overflow-hidden">
+										<video
+											src="/videos/omnientfilm.mp4"
+											autoPlay
+											muted
+											loop
+											playsInline
+											className="w-full h-full object-contain"
+										/>
+									</div>
+								</SwiperSlide>
+								
 								<SwiperSlide className="w-[900px]!">
 									<div className="w-full h-[600px] flex items-center justify-center">
 										<Image
@@ -338,19 +360,6 @@ export default function OmnientPage() {
 								</SwiperSlide>
 
 								<SwiperSlide className="w-[900px]!">
-									<div className="w-full h-[600px] flex items-center justify-center bg-black/40 rounded-lg shadow-lg overflow-hidden">
-										<video
-											src="/videos/omnientfilm.mp4"
-											autoPlay
-											muted
-											loop
-											playsInline
-											className="w-full h-full object-contain"
-										/>
-									</div>
-								</SwiperSlide>
-
-								<SwiperSlide className="w-[900px]!">
 									<div className="w-full h-[600px] flex items-center justify-center">
 										<Image
 											src="/images/omnient/omnient-laatste.png"
@@ -366,10 +375,10 @@ export default function OmnientPage() {
 
 						<div className={activeSection === 'evalueren' ? 'block' : 'hidden'}>
 							<p>We bouwden zowel een mefi  prototype als uiteindelijk een hifi prototype. Voor het bordspel ontwierpen we kaarten met reflectievragen, maakten we een spelbord en werkten we de Tarot cards uit om ethische overwegingen visueel te maken.
-							We testten verschillende tone of voice opties voor de reflectiekaarten: moesten ze serieus en professioneel zijn, of juist toegankelijk en persoonlijk? Door te testen ontdekten we wat het beste werkte voor onze doelgroep.</p>
+								We testten verschillende tone of voice opties voor de reflectiekaarten: moesten ze serieus en professioneel zijn, of juist toegankelijk en persoonlijk? Door te testen ontdekten we wat het beste werkte voor onze doelgroep.</p>
 
 							<p>Voor de digitale variant bouwden we een interactieve app waarin gebruikers hun gedragspatronen konden herkennen en reflecteren. We ontwikkelden verschillende speelmodi: samen spelen (in groepsverband) en alleen spelen (individueel), zodat de tool flexibel inzetbaar was.
-							Tijdens het project verzamelden we continu feedback. We testten onze concepten eerst met Jacqueline (opdrachtgever van RockportInk) en kregen feedback op onze eerste ideeën. Deze feedback verwerkte we in onze concept iteratie.</p>
+								Tijdens het project verzamelden we continu feedback. We testten onze concepten eerst met Jacqueline (opdrachtgever van RockportInk) en kregen feedback op onze eerste ideeën. Deze feedback verwerkte we in onze concept iteratie.</p>
 
 							<p>We voerden een experiment uit waarbij we de prototypes testten met echte startende managers. De resultaten van het experiment lieten zien wat werkte en wat niet. Bijvoorbeeld: reflectievragen moesten kort en krachtig zijn, niet te lang en academisch. Ook merkten we dat het spel laagdrempelig moest zijn, anders voelde het te "zwaar".</p>
 
