@@ -112,14 +112,14 @@ export default function OmnientPage() {
 								effect="coverflow"
 								grabCursor={true}
 								centeredSlides={true}
-								slidesPerView="auto"
+								slidesPerView={1}
 								loop={false}
 								coverflowEffect={{
 									rotate: 30,
 									stretch: 0,
 									depth: 100,
 									modifier: 1,
-									slideShadows: true,
+									slideShadows: false,
 								}}
 								navigation={true}
 								pagination={{ clickable: true }}
@@ -155,6 +155,26 @@ export default function OmnientPage() {
 										className="w-full h-auto rounded-lg shadow-lg"
 									/>
 								</SwiperSlide>
+
+								<SwiperSlide>
+									<Image
+										src="/images/omnient/omnient-hierarchie.png"
+										alt="Omnient hierarchie"
+										width={900}
+										height={600}
+										className="w-full h-auto rounded-lg shadow-lg"
+									/>
+								</SwiperSlide>
+
+								<SwiperSlide>
+									<Image
+										src="/images/omnient/omnient-hierarchie-2.png"
+										alt="Omnient hierarchie 2"
+										width={900}
+										height={600}
+										className="w-full h-auto rounded-lg shadow-lg"
+									/>
+								</SwiperSlide>
 							</Swiper>
 						</div>
 
@@ -177,7 +197,7 @@ export default function OmnientPage() {
 									stretch: 0,
 									depth: 100,
 									modifier: 1,
-									slideShadows: true,
+									slideShadows: false,
 								}}
 								navigation={true}
 								pagination={{ clickable: true }}
@@ -250,40 +270,179 @@ export default function OmnientPage() {
 									stretch: 0,
 									depth: 100,
 									modifier: 1,
-									slideShadows: true,
+									slideShadows: false,
 								}}
 								navigation={true}
 								pagination={{ clickable: true }}
 								modules={[EffectCoverflow, Navigation, Pagination]}
 								className="example-swiper mt-12!"
 							>
-								<SwiperSlide>
-									<Image
-										src="/images/omnient/omnient-kaarten-1.png"
-										alt="Omnient kaarten 1"
-										width={900}
-										height={600}
-										className="w-full h-auto rounded-lg shadow-lg"
-									/>
+								<SwiperSlide className="w-[900px]!">
+									<div className="w-full h-[600px] flex items-center justify-center">
+										<Image
+											src="/images/omnient/omnient-kaarten-1.png"
+											alt="Omnient kaarten 1"
+											width={900}
+											height={600}
+											className="w-full h-full object-contain rounded-lg shadow-lg"
+										/>
+									</div>
 								</SwiperSlide>
 
-								<SwiperSlide>
-									<Image
-										src="/images/omnient/omnient-kaarten-2.png"
-										alt="Omnient kaarten 2"
-										width={900}
-										height={600}
-										className="w-full h-auto rounded-lg shadow-lg"
-									/>
+								<SwiperSlide className="w-[900px]!">
+									<div className="w-full h-[600px] flex items-center justify-center">
+										<Image
+											src="/images/omnient/omnient-kaarten-2.png"
+											alt="Omnient kaarten 2"
+											width={900}
+											height={600}
+											className="w-full h-full object-contain rounded-lg shadow-lg"
+										/>
+									</div>
+								</SwiperSlide>
+
+								<SwiperSlide className="w-[900px]!">
+									<div className="w-full h-[600px] flex items-center justify-center">
+										<Image
+											src="/images/omnient/omnient-kaarten-omgekeerd.png"
+											alt="Omnient kaarten omgekeerd"
+											width={900}
+											height={600}
+											className="w-full h-full object-contain rounded-lg shadow-lg"
+										/>
+									</div>
+								</SwiperSlide>
+
+								<SwiperSlide className="w-[900px]!">
+									<div className="w-full h-[600px] flex items-center justify-center">
+										<Image
+											src="/images/omnient/omnient-kaart-decks.png"
+											alt="Omnient kaart decks"
+											width={900}
+											height={600}
+											className="w-full h-full object-contain rounded-lg shadow-lg"
+										/>
+									</div>
+								</SwiperSlide>
+
+								<SwiperSlide className="w-[900px]!">
+									<div className="w-full h-[600px] flex items-center justify-center">
+										<Image
+											src="/images/omnient/omnient-bord-spel.png"
+											alt="Omnient bord spel"
+											width={900}
+											height={600}
+											className="w-full h-full object-contain rounded-lg shadow-lg"
+										/>
+									</div>
+								</SwiperSlide>
+
+								<SwiperSlide className="w-[900px]!">
+									<div className="w-full h-[600px] flex items-center justify-center bg-black/40 rounded-lg shadow-lg overflow-hidden">
+										<video
+											src="/videos/omnientfilm.mp4"
+											autoPlay
+											muted
+											loop
+											playsInline
+											className="w-full h-full object-contain"
+										/>
+									</div>
+								</SwiperSlide>
+
+								<SwiperSlide className="w-[900px]!">
+									<div className="w-full h-[600px] flex items-center justify-center">
+										<Image
+											src="/images/omnient/omnient-laatste.png"
+											alt="Omnient laatste"
+											width={900}
+											height={600}
+											className="w-full h-full object-contain rounded-lg shadow-lg"
+										/>
+									</div>
 								</SwiperSlide>
 							</Swiper>
 						</div>
 
 						<div className={activeSection === 'evalueren' ? 'block' : 'hidden'}>
-							<p>
-								Na het uitproberen wordt gereflecteerd: wat werkte wel, wat niet, en wat zegt dat over hun onderliggende patronen? Op basis hiervan scherpen ze
-								hun volgende stappen aan.
-							</p>
+							<p>We bouwden zowel een mefi  prototype als uiteindelijk een hifi prototype. Voor het bordspel ontwierpen we kaarten met reflectievragen, maakten we een spelbord en werkten we de Tarot cards uit om ethische overwegingen visueel te maken.
+							We testten verschillende tone of voice opties voor de reflectiekaarten: moesten ze serieus en professioneel zijn, of juist toegankelijk en persoonlijk? Door te testen ontdekten we wat het beste werkte voor onze doelgroep.</p>
+
+							<p>Voor de digitale variant bouwden we een interactieve app waarin gebruikers hun gedragspatronen konden herkennen en reflecteren. We ontwikkelden verschillende speelmodi: samen spelen (in groepsverband) en alleen spelen (individueel), zodat de tool flexibel inzetbaar was.
+							Tijdens het project verzamelden we continu feedback. We testten onze concepten eerst met Jacqueline (opdrachtgever van RockportInk) en kregen feedback op onze eerste ideeën. Deze feedback verwerkte we in onze concept iteratie.</p>
+
+							<p>We voerden een experiment uit waarbij we de prototypes testten met echte startende managers. De resultaten van het experiment lieten zien wat werkte en wat niet. Bijvoorbeeld: reflectievragen moesten kort en krachtig zijn, niet te lang en academisch. Ook merkten we dat het spel laagdrempelig moest zijn, anders voelde het te "zwaar".</p>
+
+							<p>Na elke feedbackronde maakten we een behavioral statement iteratie: we verfijnden onze probleemstelling en oplossing op basis van wat we leerden. We voerden meerdere feedbackrondes met Jacqueline waarin we telkens onze voortgang bespraken en bijstuurden.</p>
+
+							<p>Tot slot deden we een validatie: werkten onze aannames? Herkenden startende managers zich echt in de gedragspatronen? Hielp de tool hen om bewuster keuzes te maken?</p>
+
+							<Swiper
+								effect="coverflow"
+								grabCursor={true}
+								centeredSlides={true}
+								slidesPerView="auto"
+								loop={false}
+								coverflowEffect={{
+									rotate: 30,
+									stretch: 0,
+									depth: 100,
+									modifier: 1,
+									slideShadows: false,
+								}}
+								navigation={true}
+								pagination={{ clickable: true }}
+								modules={[EffectCoverflow, Navigation, Pagination]}
+								className="example-swiper mt-12!"
+							>
+								<SwiperSlide className="w-[1100px]!">
+									<div className="w-full h-[700px] flex items-center justify-center">
+										<Image
+											src="/images/evalueren/afbeelding-1.png"
+											alt="Evalueren afbeelding 1"
+											width={1100}
+											height={700}
+											className="w-full h-full object-contain rounded-lg shadow-lg"
+										/>
+									</div>
+								</SwiperSlide>
+
+								<SwiperSlide className="w-[1100px]!">
+									<div className="w-full h-[700px] flex items-center justify-center">
+										<Image
+											src="/images/evalueren/afbeelding-2.png"
+											alt="Evalueren afbeelding 2"
+											width={1100}
+											height={700}
+											className="w-full h-full object-contain rounded-lg shadow-lg"
+										/>
+									</div>
+								</SwiperSlide>
+
+								<SwiperSlide className="w-[1100px]!">
+									<div className="w-full h-[700px] flex items-center justify-center">
+										<Image
+											src="/images/evalueren/afbeelding-3.png"
+											alt="Evalueren afbeelding 3"
+											width={1100}
+											height={700}
+											className="w-full h-full object-contain rounded-lg shadow-lg"
+										/>
+									</div>
+								</SwiperSlide>
+
+								<SwiperSlide className="w-[1100px]!">
+									<div className="w-full h-[700px] flex items-center justify-center">
+										<Image
+											src="/images/evalueren/afbeelding-4.png"
+											alt="Evalueren afbeelding 4"
+											width={1100}
+											height={700}
+											className="w-full h-full object-contain rounded-lg shadow-lg"
+										/>
+									</div>
+								</SwiperSlide>
+							</Swiper>
 						</div>
 
 						<div className={activeSection === 'samen' ? 'block' : 'hidden'}>
