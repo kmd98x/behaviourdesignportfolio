@@ -3,6 +3,10 @@
 
 @theme {
   --font-montez: "Montez", cursive;
+  --font-inter: "Inter", sans-serif;
   --font-jacques: "Jacques Francois", serif;
   --font-gaegu: "Gaegu", sans-serif;
+
+  --color-orange: #FD5E01;
+  --color-body-alt: #101216;
 }

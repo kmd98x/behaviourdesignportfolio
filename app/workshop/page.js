@@ -7,6 +7,7 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation, Pagination, EffectCoverflow } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/pagination'
+import PageHeading from '@/components/ui/PageHeading'
 
 export default function WorkshopPage() {
 	const [activeSection, setActiveSection] = useState('orienteren')
@@ -15,14 +16,7 @@ export default function WorkshopPage() {
 		<div className="block min-h-screen py-[100px]! relative overflow-hidden">
 			<div className="w-full mx-auto flex gap-[60px] items-start">
 				<div className="flex-1 w-full relative z-2 px-10!">
-					<h1 className="font-montez text-[48px] font-normal mb-0! text-[#FD5E01]">Workshop</h1>
-					<Image
-						src="/images/lijn.svg"
-						alt="Workshop"
-						className="w-full max-w-[371px] h-auto block -mt-5!"
-						width={371}
-						height={50}
-					/>
+					<PageHeading title="Workshop" />
 					<div className="text-lg leading-[1.8] text-white w-full mt-8! flex gap-[250px]">
 						<div>
 							<h2 className="mb-10 font-montez text-3xl text-orange-500">Korte beschrijving van de opdracht</h2>

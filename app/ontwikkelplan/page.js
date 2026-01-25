@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import Image from 'next/image'
+import PageHeading from '@/components/ui/PageHeading'
 
 export default function OntwikkelplanPage() {
   const [openAccordion, setOpenAccordion] = useState(null)
@@ -14,14 +15,7 @@ export default function OntwikkelplanPage() {
     <div className="page active over-mij-page" style={{ display: 'block' }}>
       <div className="over-mij-content">
         <div className="over-mij-text">
-          <h1 className="section-title">Ontwikkelplan</h1>
-          <Image 
-            src="/images/lijn.svg" 
-            alt="Ontwikkelplan" 
-            className="over-mij-title-image"
-            width={371}
-            height={50}
-          />
+          <PageHeading title="Ontwikkelplan" />
           <div className="text-content" style={{ marginTop: '30px' }}>
             <div className="ontwikkelplan-accordion">
               <div className={`accordion-item ${openAccordion === 0 ? 'active' : ''}`}>

@@ -5,6 +5,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import Pause from '@/components/ui/Pause'
 import Play from '@/components/ui/Play'
+import PageHeading from '@/components/ui/PageHeading'
 
 export default function Gewoonte() {
 	const [activeSection, setActiveSection] = useState('orienteren')
@@ -207,14 +208,7 @@ export default function Gewoonte() {
 			<div className="page active over-mij-page" style={{ display: 'block' }}>
 				<div className="over-mij-content">
 					<div className="over-mij-text">
-						<h1 className="section-title">Gewoonte</h1>
-						<Image
-							src="/images/lijn.svg"
-							alt="Gewoonte"
-							className="over-mij-title-image"
-							width={371}
-							height={50}
-						/>
+						<PageHeading title="Gewoonte" />
 						<div className="text-content">
 							<p className="gewoonte-subtitle">Korte beschrijving van de opdracht</p>
 							<p>Voor dit project moest ik een gewoonte veranderen door zelf te experimenteren en te ervaren. De opdracht bestond uit drie onderdelen:</p>

@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import Tab from '@/components/ui/Tab'
+import PageHeading from '@/components/ui/PageHeading'
 
 export default function CarddeckPage() {
 	const [activeSection, setActiveSection] = useState('beschrijving')
@@ -69,15 +70,7 @@ export default function CarddeckPage() {
 			<div className="page active over-mij-page" style={{ display: 'block' }}>
 				<div className="over-mij-content">
 					<div className="over-mij-text">
-						<h1 className="section-title">Carddeck</h1>
-						
-						<Image 
-							src="/images/lijn.svg" 
-							alt="Carddeck" 
-							className="over-mij-title-image"
-							width={371}
-							height={50}
-						/>
+						<PageHeading title="Carddeck" />
 						
 						<div className="carddeck-video-wrapper">
 							<video muted autoPlay loop className="carddeck-video">

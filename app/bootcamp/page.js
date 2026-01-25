@@ -7,6 +7,7 @@ import { Navigation, Pagination, EffectCoverflow } from 'swiper/modules'
 import Image from 'next/image'
 import BootcampCard from "@/components/ui/BootcampCard"
 import Tab from "@/components/ui/Tab"
+import PageHeading from '@/components/ui/PageHeading'
 
 // Swiper CSS is loaded via CDN in layout.js
 
@@ -16,8 +17,7 @@ export default function BootcampPage() {
 		<div className="page active over-mij-page" style={{ display: 'block' }}>
 			<div className="over-mij-content">
 				<div className="over-mij-text">
-					<h1 className="section-title">Bootcamp</h1>
-					<img src="/images/lijn.svg" alt="Bootcamp" className="over-mij-title-image" />
+					<PageHeading title="Bootcamp" />
 
 					<p className="text-lg text-orange-500">Korte beschrijving van de opdracht</p>
 					<p className="mt-8!">Tijdens de bootcamp hebben we een groepsopdracht gedaan over consuminderen.Ons team richtte zich op het verminderen van energieverbruik in huis. Onze doelgroep was de partner van een van onze groepsgenoten. Omdat het maar 1 persoon was, konden we een heel persoonlijk en passend concept maken.Ons idee helpt hem makkelijk en op een leuke manier zijn lampen en apparaten uit te zetten, zodat hij bewuster met energie omgaat en tegelijk beloningen kan verdienen.</p>

@@ -1,5 +1,5 @@
 import './globals.css'
-import { Montez, Jacques_Francois, Gaegu } from 'next/font/google'
+import { Montez, Jacques_Francois, Gaegu, Inter } from 'next/font/google'
 import HamburgerMenu from '@/components/HamburgerMenu'
 
 const montez = Montez({ 
@@ -12,6 +12,12 @@ const jacquesFrancois = Jacques_Francois({
   subsets: ['latin'],
   weight: ['400'],
   variable: '--font-jacques-francois',
+});
+
+const inter = Inter({ 
+  subsets: ['latin'],
+  weight: ['400'],
+  variable: '--font-inter',
 })
 
 const gaegu = Gaegu({ 
@@ -31,7 +37,7 @@ export default function RootLayout({ children }) {
       <head>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
       </head>
-      <body className={`${montez.variable} ${jacquesFrancois.variable} ${gaegu.variable}`}>
+      <body className={`${montez.variable} ${jacquesFrancois.variable} ${gaegu.variable} ${inter.variable}`}>
         <HamburgerMenu />
         {children}
       </body>

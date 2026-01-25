@@ -8,6 +8,8 @@ import { Navigation, Pagination, EffectCoverflow } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/pagination'
 
+import PageHeading from '@/components/ui/PageHeading'
+
 export default function OmnientPage() {
 	const [activeSection, setActiveSection] = useState('orienteren')
 
@@ -23,14 +25,7 @@ export default function OmnientPage() {
 		<div className="block min-h-screen py-[100px]! relative overflow-hidden">
 			<div className="over-mij-content">
 				<div className="over-mij-text">
-					<h1 className="section-title">Omnient</h1>
-					<Image
-						src="/images/lijn.svg"
-						alt="Gewoonte"
-						className="over-mij-title-image"
-						width={371}
-						height={50}
-					/>
+					<PageHeading title="Omnient" />
 
 					<div className="text-lg leading-[1.8] w-full mt-8!">
 						<h2 className='text-orange-500 text-lg'>Korte beschrijving van de opdracht</h2>
