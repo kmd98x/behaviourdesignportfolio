@@ -5,6 +5,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation, Pagination, EffectCoverflow } from 'swiper/modules'
+import PageHeading from '@/components/ui/PageHeading'
 
 export default function ZeroMetingEvaluerenPage() {
   const [activeSection, setActiveSection] = useState('waar-ik-nu-sta')
@@ -50,14 +51,7 @@ export default function ZeroMetingEvaluerenPage() {
     <div className="page active over-mij-page" style={{ display: 'block' }}>
       <div className="over-mij-content">
         <div className="over-mij-text">
-          <h1 className="section-title">0- Meting</h1>
-          <Image 
-            src="/images/lijn.svg" 
-            alt="0- Meting" 
-            className="over-mij-title-image"
-            width={371}
-            height={50}
-          />
+          <PageHeading title="0- Meting" />
           <div className="text-content" style={{ marginTop: '30px' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '30px' }}>
               <Link href="/0-meting" className="back-arrow">←</Link>

@@ -21,7 +21,9 @@ export default function InhoudsopgavePage() {
 	return (
 		<div className="page active" style={{ display: 'block' }}>
 			<div className="page-content">
-				<PageHeading title="Inhoudsopgave" />
+				<div className="ml-10!">
+					<PageHeading title="Inhoudsopgave" />
+				</div>
 
 				<div className="translate-y-20 translate-x-14 py-14 relative">
 					<InhoudsopgaveSVG />

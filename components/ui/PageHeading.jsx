@@ -53,10 +53,10 @@ export default function PageHeading({ title }) {
     // Split title into individual letters, preserving spaces
     const letters = title ? title.split('').map((char, index) => {
         if (char === ' ') {
-            return <span key={index} className="letter inline-block w-2" aria-hidden="true">&nbsp;</span>
+            return <span key={index} className="letter inline-block w-2 font-montez" aria-hidden="true">&nbsp;</span>
         }
         return (
-            <span key={index} className="letter inline-block" aria-hidden="false">
+            <span key={index} className="letter inline-block font-montez" aria-hidden="false">
                 {char}
             </span>
         )
@@ -66,7 +66,7 @@ export default function PageHeading({ title }) {
         <div className="mb-5!">
             <h1 
                 ref={titleRef}
-                className="ml-3! font-montez text-4xl font-bold text-orange-500 mb-12 leading-none"
+                className="text-5xl text-orange-500 mb-12 leading-none"
                 aria-label={title}
             >
                 {letters}
@@ -79,6 +79,7 @@ export default function PageHeading({ title }) {
                 height="50" 
                 fill="none" 
                 viewBox="0 0 342 50"
+                className="-ml-10!"
             >
                 <defs>
                     <clipPath id="svg-clip">

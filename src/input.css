@@ -1,9 +1,0 @@
-@import "tailwindcss";
-
-@theme {
-  --font-montez: "Montez", cursive;
-  --font-jacques: "Jacques Francois", serif;
-  --font-gaegu: "Gaegu", sans-serif;
-
-  --color-orange-500: #fd5e01;
-}
