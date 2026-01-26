@@ -1,8 +1,11 @@
 'use client'
+
+// Dependencies
 import { useRef } from 'react'
 import gsap from 'gsap'
-
 import { useGSAP } from '@gsap/react'
+
+// Components
 import PageHeading from '@/components/ui/PageHeading'
 import Link from 'next/link'
 
@@ -16,13 +19,17 @@ export default function ZeroMetingPage() {
 			duration: 0.5,
 			ease: 'power2.out',
 		})
-		gsap.from(competentiesContainerRef.current, {
-			scale: 1,
-			duration: 0.5,
-			ease: 'power2.out',
-			stagger: 0.1,
-		}, {scope: competentiesContainerRef})
 	})
+
+	useGSAP(() => {
+		gsap.to('.competentie-item', {
+			y: 0,
+			opacity: 1,
+			duration: 0.5,
+			stagger: 0.1,
+		})
+	}, {scope: competentiesContainerRef})
+
 	return (
 		<div className="page active over-mij-page" style={{ display: 'block' }}>
 			<div className="over-mij-content">

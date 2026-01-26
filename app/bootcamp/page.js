@@ -8,6 +8,8 @@ import Image from 'next/image'
 import BootcampCard from "@/components/ui/BootcampCard"
 import Tab from "@/components/ui/Tab"
 import PageHeading from '@/components/ui/PageHeading'
+import Circle from '@/components/svgs/Circle'
+import CurlyArrowDown from '@/components/svgs/CurlyArrowDown'
 
 // Swiper CSS is loaded via CDN in layout.js
 
@@ -29,8 +31,9 @@ export default function BootcampPage() {
 				<BootcampCard title="Catch" content="aandacht trekken" />
 				<BootcampCard title="Convert" content="actie laten doen" />
 				<BootcampCard title="Confirm" content="succes bevestigen" noBorder={true}>
-					<img src="/images/bootcamp/circle.svg" alt="Circle afbeelding" className="absolute size-full scale-130" />
+					{/* <img src="/images/bootcamp/circle.svg" alt="Circle afbeelding" className="" /> */}
 					<img src="/images/bootcamp/right-arrow-curved.svg" className="absolute -bottom-16 -translate-x-[60px]" alt="Gebogen pijl naar rechts beneden" />
+					<Circle className="absolute size-full scale-130" />
 				</BootcampCard>
 				<BootcampCard title="Continue" content="het gedrag volhouden" />
 			</div>
@@ -45,7 +48,7 @@ export default function BootcampPage() {
 					<li>Als grapje verandert oma in Super Saiyan als iets wordt uitgezet.</li>
 				</ul>
 
-				<img src="/images/bootcamp/curly-arrow-down.svg" className="absolute -left-24 top-32" alt="Gekrulde pijl naar beneden" />
+				<CurlyArrowDown className="absolute -left-24 top-32" />
 
 				<p className="mt-40! -translate-x-68">Door hieraan te werken heb ik vooral gewerkt aan de competenties:</p>
 			</div>
@@ -108,7 +111,7 @@ export default function BootcampPage() {
 						grabCursor={true}
 						centeredSlides={true}
 						slidesPerView="auto"
-						loop={true}
+						loop={false}
 						coverflowEffect={{
 							rotate: 50,
 							stretch: 0,

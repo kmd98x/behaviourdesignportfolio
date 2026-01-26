@@ -244,7 +244,7 @@ a {
     display: none;
     min-height: 100vh;
     padding: 40px 0;
-    animation: fadeIn 0.5s ease;
+    animation: fadeIn 0.8s ease-in-out;
 }
 
 .page.active {
@@ -1145,6 +1145,8 @@ a {
     overflow: hidden;
     text-decoration: none;
     color: inherit;
+    transform: translateY(20px);
+    opacity: 0;
 }
 
 .competentie-item::before {

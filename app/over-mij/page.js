@@ -2,11 +2,24 @@
 
 import PageHeading from '@/components/ui/PageHeading'
 import Image from 'next/image'
+import { useGSAP } from '@gsap/react'
+import gsap from 'gsap'
+import { useRef } from 'react'
 
 export default function OverMijPage() {
+	const overMijImage = useRef(null)
+
+	useGSAP(() => {
+		gsap.from(overMijImage.current, {
+			duration: 0.8,
+			width: 0,
+			ease: 'power2.out',
+		})
+	});
+
 	return (
 		<div className="page active over-mij-page" style={{ display: 'block' }}>
-			<div className="over-mij-photo">
+			<div className="over-mij-photo" ref={overMijImage}>
 				<Image
 					src="/images/bewerktefoto2.svg"
 					alt="Martina Doekharan"
