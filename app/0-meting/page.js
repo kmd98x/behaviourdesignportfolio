@@ -39,6 +39,7 @@ export default function ZeroMetingPage() {
 					<div className="text-content" ref={textContentRef}>
 						<p>De 0-meting geeft een duidelijk beeld van mijn huidige niveau per gekozen competentie voordat ik start met de minor. Het doel is om te reflecteren op mijn ontwikkeling tot nu toe en inzicht te krijgen in waar ik nog kan groeien. Voor iedere competentie beschrijf ik mijn huidige vaardigheden, onderbouw ik dit met voorbeelden uit eerdere projecten of studiewerk, en geef ik aan wat al goed gaat en waar verbeterpunten liggen. Door dit helder in kaart te brengen, kan ik gerichter werken aan mijn leerdoelen en ontwikkeling gedurende de minor. Hieronder ziet u de 5 competenties die ik heb gekozen. U kunt op elke competentie klikken om meer informatie per onderdeel te bekijken.</p>
 					</div>
+					
 					<div className="competenties-container" ref={competentiesContainerRef}>
 						<Link href="/0-meting-orienteren" className="competentie-item" data-competentie="1">
 							<div className="competentie-number">1</div>

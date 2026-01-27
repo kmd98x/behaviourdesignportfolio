@@ -337,6 +337,8 @@ export default function Gewoonte() {
 									<div className="verbeelden-video-wrapper">
 										<video
 											ref={videoRef}
+											src='/videos/wielfilm.mp4'
+											type='video/mp4'
 											className="verbeelden-video"
 											muted
 											loop
@@ -344,7 +346,6 @@ export default function Gewoonte() {
 											onPlay={() => setIsPlaying(true)}
 											onPause={() => setIsPlaying(false)}
 										>
-											<source src="/videos/wielfilm.mp4" type="video/mp4" />
 											Je browser ondersteunt de video tag niet.
 										</video>
 										<button
@@ -422,6 +423,8 @@ export default function Gewoonte() {
 										<div className='max-w-4xl relative'>
 											<video
 												ref={prototypenVideoRef}
+												src='/videos/prototypefilmwheellunch.mp4'
+												type='video/mp4'
 												className="verbeelden-video"
 												muted
 												loop
@@ -429,7 +432,6 @@ export default function Gewoonte() {
 												onPlay={() => setIsPrototypenPlaying(true)}
 												onPause={() => setIsPrototypenPlaying(false)}
 											>
-												<source src="/videos/prototypefilmwheellunch.mp4" type="video/mp4" />
 												Je browser ondersteunt de video tag niet.
 											</video>
 											<button
